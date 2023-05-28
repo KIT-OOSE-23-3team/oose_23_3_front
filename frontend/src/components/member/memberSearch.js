@@ -1,6 +1,6 @@
-// 회원 가입 화면
+//멤버 화면
 
-function SignUp() {
+function MemberSearch() {
   return (
     <div>
       <input type="text" id="id" name="id" placeholder="id" required></input>
@@ -58,4 +58,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default MemberSearch;
