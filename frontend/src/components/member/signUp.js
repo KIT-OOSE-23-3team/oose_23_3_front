@@ -1,6 +1,6 @@
 // 회원 가입 화면
 
-function signUp() {
+function SignUp() {
     return (
         <div>
           <input type="text" id="id" name="id" placeholder="id" required></input>
@@ -44,4 +44,4 @@ function signUp() {
       );     
 }
 
-export default signUp;
+export default SignUp;

@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import "./components/member/signUp.js";
+import SignUp from "./components/member/signUp.js";
 
 // function App() {
 // return (
@@ -24,8 +24,8 @@ import "./components/member/signUp.js";
 // );
 // }
 
-const App = () => {
-  return <signUp></signUp>;
-};
+function App() {
+  return <SignUp></SignUp>;
+}
 
 export default App;
