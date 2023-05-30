@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>공지사항 등록</title>
+    <link rel="stylesheet" href="noticecontrol.css">
+</head>
+<body>
+
+<div id="myDIV" class="header">
+    <h2 style="margin:5px">공지사항 등록</h2>
+    <label for="myTitleInput">제목</label>
+    <input type="text" id="myTitleInput" placeholder="제목을 입력해주세요.">
+    <br><br>
+    <label for="myContentInput">내용</label>
+    <textarea id="myContentInput" placeholder="내용을 입력해주세요." rows="6"></textarea>
+    <br><br>
+    <span id="registration" onclick="newElement()" class="addBtn">등록</span>
+</div>
+
+<ul id="myUL">
+
+</ul>
+
+<script src="noticecontrol.js"></script>
+
+</body>
+</html>
+
