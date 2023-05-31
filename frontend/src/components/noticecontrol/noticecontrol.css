@@ -1,0 +1,33 @@
+.header {
+    text-align: center;
+}
+
+label {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #999999;
+    width: 50px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#myContentInput {
+    height: 150px;
+    width: 250px;
+    resize: none;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#myTitleInput {
+    width: 250px;
+}
+
+#registration {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #599732;
+    color: white;
+}
