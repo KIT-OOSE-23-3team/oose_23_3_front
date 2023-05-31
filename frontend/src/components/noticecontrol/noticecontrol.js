@@ -9,6 +9,7 @@ const addCloseButton = () => {
   }
 };
 
+
 const addCheckedToggle = () => {
   const list = document.querySelector('ul');
   list.addEventListener('click', function(ev) {
