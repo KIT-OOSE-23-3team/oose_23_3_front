@@ -2,11 +2,10 @@ import React from 'react';
 import NavbarTop from './components/NavbarTop';
 import NavbarLeft from './components/NavbarLeft';
 import RentalOfficeCreateScreen from './components/management/RentalOfficeCreateScreen';
-//import BicycleCreate from './components/management/BicycleCreate';
-/*import BicycleRead from './components/management/BicycleRead';*/
-/*import RentalOfficeRead from './components/management/RentalOfficeRead';*/
+/*import BicycleCreate from './components/management/BicycleCreate';*/
 import './NavborTop.css';
-import './NavborLeft.css'
+import './NavborLeft.css';
+import './Create.css';
 import './App.css';
 
 function App() {

@@ -21,7 +21,7 @@ function BicycleCreate() {
     bicycle.append('bicycleNumber', bicycleNumber);
     bicycle.append('isBroken', isBroken);
 
-    axios.post('http://localhost:8000/bicycleinsert', bicycle).then((r) => {
+    axios.post('http://localhost:8000/bicycleInsert', bicycle).then((r) => {
       console.log(r);
     });
   };
@@ -51,7 +51,7 @@ function BicycleCreate() {
       </div>
 
       <div className="input-container">
-        <label htmlFor="bicycleState" className="bicycle-create-input-label">
+        <label htmlFor="bicycleState" className="create-input-label">
           자전거 상태
         </label>
         <select
@@ -67,7 +67,7 @@ function BicycleCreate() {
           <option value="disposed">폐기</option>
         </select>
       </div>
-      <input type="submit" value="자전거 등록" onClick={handleSubmit} className="create-submit"/>
+      <input type="submit" value="등록" onClick={handleSubmit} className="create-submit"/>
     </div>
 
 

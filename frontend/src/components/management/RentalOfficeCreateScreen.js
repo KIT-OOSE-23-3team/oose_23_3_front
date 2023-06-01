@@ -26,7 +26,7 @@ function RentalOfficeCreateScreen() {
     rentalOffice.append('rentalOfficeName', rentalOfficeName);
     rentalOffice.append('maximumBicycle', maximumBicycle);
 
-    axios.post('http://localhost:8000/rentalOfficeinsert', rentalOffice).then((r) => {
+    axios.post('http://localhost:8000/rentalOfficeInsert', rentalOffice).then((r) => {
       console.log(r);
     });
   };
@@ -35,7 +35,7 @@ function RentalOfficeCreateScreen() {
    if (rentalOfficeNum && rentalOfficeName && maximumBicycle) {
         submit();
    } else {
-      alert("모든 값을 입력하시고 대여소 등록 버튼을 눌러주세요.");
+       alert("모든 값을 입력하시고 대여소 등록 버튼을 눌러주세요.");
      }
    };
 

@@ -8,59 +8,7 @@
   display: flex;
   flex-direction: row;
 }
-.create-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  border:3px solid #00ff00;
-  justify-content:center;
-  margin: 0 auto;
-}
 
-h1, h2{
-  border:3px solid #ff0000;
-  margin: 0 auto;
-}
-.input-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-.create-input-label {
-  margin-top:10px;
-  margin-left: 10px;
-  margin-right: 20px;
-  margin-bottom: 10px;
-  font-weight:bold;
-}
-
-.create-input {
-  width: 400px;
-  height: 30px;
-  margin-top:20px;
-  margin-bottom: 20px;
-  right:100%;
-}
-
-.bicycle-create-select {
-  width: 400px;
-  height: 30px;
-  margin-top:20px;
-  margin-bottom: 20px;
-}
-.create-submit{
-  cursor:pointer;
-  margin: 0 auto;
-  width: 150px;
-  height:50px;
-  margin-top:50px;
-  border:3px solid #ff0000;
-  background-color:#009000;
-  color:#ffffff;
-  font-weight:bold;
-  font-size:20px;
-  border-radius: 0.5rem;
-}
 /*.content-container {
   display: flex;
   flex-direction: column;
@@ -131,31 +79,8 @@ label {
   font-weight: bold;
   font-size:20px;
 }*/
-/* 자전거 조회 화면 테이블 작동용 스크롤 */
-.table-container {
-  width: 100%;
-  max-height: 300px;
-  overflow-y: scroll;
-}
 
-.bicycle-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.bicycle-table th,
-.bicycle-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: center;
-}
-
-/* 대여소 조회 화면 */
-.rental-office-container {
-  display: flex;
-  flex-direction: row;
-}
-
+/*
 .office-list {
   display: flex;
   flex-direction: column;
@@ -163,7 +88,7 @@ label {
   border:3px solid #ff0000;
 }
 .button-margin {
-  margin: 20px 20px; /* (위아래 여백, 좌우 여백) 형태로 수정합니다. */
+  margin: 20px 20px;
 }
 .selected-office {
   display: flex;
@@ -181,6 +106,7 @@ label {
   margin-right: 10px;
   font-weight:bold;
 }
+*/
 
 
 /*.App {
