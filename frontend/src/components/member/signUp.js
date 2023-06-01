@@ -148,7 +148,7 @@ function SignUp() {
         required
         onChange={birthDayChange}
       ></input>
-      <input type="submit" value="가입" onClick={memberSearch}></input>
+      <input type="submit" value="가입" onClick={submit}></input>
     </div>
   );
 }

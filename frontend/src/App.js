@@ -1,4 +1,5 @@
 import React from 'react';
+import { useCookies } from 'react-cookie';
 import NavbarTop from './components/NavbarTop';
 import NavbarLeft from './components/NavbarLeft';
 import RentalOfficeCreateScreen from './components/management/RentalOfficeCreateScreen';
@@ -8,15 +9,19 @@ import './NavborLeft.css';
 import './Create.css';
 import './App.css';
 import SignUp from './components/member/signUp';
+import MemberSearch from './components/member/memberSearch';
 
 function App() {
+  const [cookies, SetCookie, removeCookie] = useCookies();
+  SetCookie('id', 'test');
   return (
     <div className="App">
       <NavbarTop />
       <div className="main-content">
         <NavbarLeft />
         {/* <RentalOfficeCreateScreen/> */}
-        <SignUp></SignUp>
+        {/* <SignUp></SignUp> */}
+        <MemberSearch></MemberSearch>
       </div>
     </div>
   );
