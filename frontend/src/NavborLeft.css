@@ -1,0 +1,25 @@
+.navbar-left {
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  border-right: 1px solid #ddd;
+  padding: 20px;
+}
+
+.navbar-left ul {
+  border:3px solid #ff0000;
+  display: flex;
+  flex-direction: column;
+  margin-right:20px;
+}
+
+.navbar-left li {
+  list-style: none;
+  cursor:pointer;
+  margin: 50px 0;
+  border: 1px solid black;
+  background-color: #81c147;
+  font-weight: bold;
+  font-size:25px;
+  border-radius: 0.5rem;
+}

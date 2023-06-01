@@ -5,6 +5,8 @@ import RentalOfficeCreateScreen from './components/management/RentalOfficeCreate
 //import BicycleCreate from './components/management/BicycleCreate';
 /*import BicycleRead from './components/management/BicycleRead';*/
 /*import RentalOfficeRead from './components/management/RentalOfficeRead';*/
+import './NavborTop.css';
+import './NavborLeft.css'
 import './App.css';
 
 function App() {
