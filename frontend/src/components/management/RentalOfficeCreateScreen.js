@@ -21,10 +21,11 @@ function RentalOfficeCreateScreen() {
   };
 
   const submit = () => {
-    const rentalOffice = new FormData();
-    rentalOffice.append('rentalOfficeNum', rentalOfficeNum);
-    rentalOffice.append('rentalOfficeName', rentalOfficeName);
-    rentalOffice.append('maximumBicycle', maximumBicycle);
+    const rentalOffice = {
+        rentalOfficeNum: rentalOfficeNum,
+        rentalOfficeName: rentalOfficeName,
+        maximumBicycle: maximumBicycle
+    }
 
     axios.post('http://localhost:8000/rentalOfficeInsert', rentalOffice).then((r) => {
       console.log(r);
