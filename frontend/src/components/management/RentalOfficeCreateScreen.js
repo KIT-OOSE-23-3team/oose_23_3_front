@@ -35,7 +35,7 @@ function RentalOfficeCreateScreen() {
    if (rentalOfficeNum && rentalOfficeName && maximumBicycle) {
         submit();
    } else {
-       alert("모든 값을 입력하시고 대여소 등록 버튼을 눌러주세요.");
+       alert("모든 값을 입력하시고, 등록 버튼을 눌러주세요.")
      }
    };
 
@@ -85,7 +85,7 @@ function RentalOfficeCreateScreen() {
         className="create-input"
        ></input>
      </div>
-     <input type="submit" value="대여소 등록" onClick={handleSubmit} className="create-submit"/>
+     <input type="submit" value="등록" onClick={handleSubmit} className="create-submit"/>
     </div>
   );
 }

@@ -1,8 +1,8 @@
 import React from 'react';
 import NavbarTop from './components/NavbarTop';
 import NavbarLeft from './components/NavbarLeft';
-import RentalOfficeCreateScreen from './components/management/RentalOfficeCreateScreen';
-/*import BicycleCreate from './components/management/BicycleCreate';*/
+/*import RentalOfficeCreateScreen from './components/management/RentalOfficeCreateScreen';*/
+import BicycleCreate from './components/management/BicycleCreate';
 import './NavborTop.css';
 import './NavborLeft.css';
 import './Create.css';
@@ -11,11 +11,10 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <NavbarTop /> {/* 상단 메뉴바 태그 */}
+      <NavbarTop />
       <div className="main-content">
-        {/* 좌측 메뉴바 태그 */}
         <NavbarLeft />
-        <RentalOfficeCreateScreen/>
+        <BicycleCreate/>
       </div>
     </div>
   );

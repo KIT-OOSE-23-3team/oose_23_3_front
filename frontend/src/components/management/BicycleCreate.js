@@ -29,7 +29,7 @@ function BicycleCreate() {
     if (bicycleNumber && isBroken) {
       submit();
     } else {
-      alert("모든 값을 입력하시고 자전거 등록 버튼을 눌러주세요.");
+       alert("모든 값을 입력하시고 자전거 등록 버튼을 눌러주세요.");
     }
   };
   return (

@@ -1,5 +1,5 @@
-.navbar-left {
-  display: flex;
+.navbar-left{
+  display:flex;
   flex-direction: column;
   background-color: #f9f9f9;
   border-right: 1px solid #ddd;
