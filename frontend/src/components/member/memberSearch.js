@@ -3,7 +3,7 @@
 function MemberSearch() {
   return (
     <div>
-      <input type="text" id="id" name="id" placeholder="id" required></input>
+      <input type="text" id="id" name="id" placeholder="id" required disabled></input>
       <input
         type="password"
         id="pw"
@@ -53,7 +53,7 @@ function MemberSearch() {
         placeholder="birthday"
         required
       ></input>
-      <input type="submit"></input>
+      <input type="submit" value="변경"></input>
     </div>
   );
 }

@@ -7,6 +7,7 @@ import './NavborTop.css';
 import './NavborLeft.css';
 import './Create.css';
 import './App.css';
+import SignUp from './components/member/signUp';
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
       <NavbarTop />
       <div className="main-content">
         <NavbarLeft />
-        <RentalOfficeCreateScreen/>
+        {/* <RentalOfficeCreateScreen/> */}
+        <SignUp></SignUp>
       </div>
     </div>
   );
