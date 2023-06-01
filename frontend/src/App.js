@@ -1,7 +1,7 @@
 import React from 'react';
 import NavbarTop from './components/NavbarTop';
 import NavbarLeft from './components/NavbarLeft';
-/*import RentalOfficeCreateScreen from './components/management/RentalOfficeCreateScreen';*/
+import RentalOfficeCreateScreen from './components/management/RentalOfficeCreateScreen';
 import BicycleCreate from './components/management/BicycleCreate';
 import './NavborTop.css';
 import './NavborLeft.css';
@@ -14,7 +14,7 @@ function App() {
       <NavbarTop />
       <div className="main-content">
         <NavbarLeft />
-        <BicycleCreate/>
+        <RentalOfficeCreateScreen/>
       </div>
     </div>
   );

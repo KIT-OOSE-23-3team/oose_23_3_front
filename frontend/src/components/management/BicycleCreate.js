@@ -17,9 +17,12 @@ function BicycleCreate() {
   };
 
   const submit = () => {
-    const bicycle = new FormData();
-    bicycle.append('bicycleNumber', bicycleNumber);
-    bicycle.append('isBroken', isBroken);
+    const bicycle = {
+      bicycleNumber: bicycleNumber,
+      isBroken: false,
+      isRented: false
+      //TODO 대여소 번호를 같이 넘겨줘야함.
+    };
 
     axios.post('http://localhost:8000/bicycleInsert', bicycle).then((r) => {
       console.log(r);
