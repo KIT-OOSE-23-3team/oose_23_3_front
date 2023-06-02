@@ -22,16 +22,18 @@ const addCheckedToggle = () => {
 
 const newPost = () => {
   const li = document.createElement("li");
-  const title = document.getElementById("myTitleInput").value;
-  const text = document.getElementById("myContentInput").value;
+  const titleInput = document.getElementById("myTitleInput");
+  const textInput = document.getElementById("myContentInput");
+  const title = titleInput.value;
+  const text = textInput.value;
   const postText = document.createTextNode(`${title}: ${text}`);
   li.appendChild(postText);
   if (title === '' || text === '') {
     alert("제목과 내용은 반드시 입력해야합니다.");
   } else {
     document.getElementById("myUL").appendChild(li);
-    document.getElementById("myTitleInput").value = "";
-    document.getElementById("myContentInput").value = "";
+    titleInput.value = "";
+    textInput.value = "";
 
     const notice = {
       title: title,
@@ -41,6 +43,8 @@ const newPost = () => {
     axios.post('/postNotice', notice)
       .then(response => {
         console.log(response.data);
+        titleInput.value = "";
+        textInput.value = "";
       })
       .catch(error => {
         console.error(error);
