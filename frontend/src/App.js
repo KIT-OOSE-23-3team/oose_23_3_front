@@ -14,7 +14,7 @@ function App() {
       <NavbarTop />
       <div className="main-content">
         <NavbarLeft />
-        <RentalOfficeCreateScreen/>
+        <BicycleCreate/>
       </div>
     </div>
   );
