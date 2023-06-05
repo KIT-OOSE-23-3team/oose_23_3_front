@@ -7,6 +7,7 @@ import { useState } from 'react';
 function BicycleCreate() {
   const [bicycleNumber, setBicycleNumber] = useState('');
   const [isBroken, setIsBroken] = useState('');
+  const [rentalOfficeNum, setRentalOfficeNum] = useState('');
 
   const bicycleNumberChange = (e) => {
     setBicycleNumber(e.target.value);
@@ -16,12 +17,17 @@ function BicycleCreate() {
     setIsBroken(e.target.value);
   };
 
+  const rentalOfficeNumChange = (e) => {
+    setRentalOfficeNum(e.target.value);
+  }
   const submit = () => {
     const bicycle = {
       bicycleNumber: bicycleNumber,
       isBroken: false,
-      isRented: false
+      isRented: false,
+      rentalOfficeNum:rentalOfficeNum
       //TODO 대여소 번호를 같이 넘겨줘야함.
+      //대여소 번호를 같이 넘겨 줘야 한다는 게 이렇게 하라는 게 맞을까요...?
     };
 
     axios.post('http://localhost:8000/bicycleInsert', bicycle).then((r) => {
@@ -32,7 +38,7 @@ function BicycleCreate() {
     if (bicycleNumber && isBroken) {
       submit();
     } else {
-       alert("모든 값을 입력하시고 자전거 등록 버튼을 눌러주세요.");
+       alert("모든 값을 입력하시고 등록 버튼을 눌러주세요.");
     }
   };
   return (
@@ -52,23 +58,19 @@ function BicycleCreate() {
           className="create-input"
         ></input>
       </div>
-
       <div className="input-container">
-        <label htmlFor="bicycleState" className="create-input-label">
-          자전거 상태
+        <label htmlFor="bicycleNumber" className="create-input-label">
+           대여소 번호
         </label>
-        <select
-          value={isBroken}
-          id="bicycleState"
-          name="bicycleState"
-          onChange={isBrokenChange}
-          className="bicycle-create-select"
-        >
-          <option value="normal">운영</option>
-          <option value="broken">도난</option>
-          <option value="rented">고장</option>
-          <option value="disposed">폐기</option>
-        </select>
+        <input
+          type="text"
+          value={rentalOfficeNum}
+          id="rentalOfficeNum"
+          name="rentalOfficeNum"
+          placeholder="대여소 번호를 입력해주세요."
+          onChange={rentalOfficeNumChange}
+          className="create-input"
+        ></input>
       </div>
       <input type="submit" value="등록" onClick={handleSubmit} className="create-submit"/>
     </div>
