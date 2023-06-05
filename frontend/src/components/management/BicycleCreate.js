@@ -25,7 +25,9 @@ function BicycleCreate() {
       bicycleNumber: bicycleNumber,
       isBroken: false,
       isRented: false,
-      rentalOfficeNum:rentalOfficeNum
+      rentalOffice: {
+        rentalOfficeNum: rentalOfficeNum
+      }
       //TODO 대여소 번호를 같이 넘겨줘야함.
       //대여소 번호를 같이 넘겨 줘야 한다는 게 이렇게 하라는 게 맞을까요...?
     };
@@ -35,7 +37,7 @@ function BicycleCreate() {
     });
   };
   const handleSubmit = () => {
-    if (bicycleNumber && isBroken) {
+    if (bicycleNumber && rentalOfficeNum) {
       submit();
     } else {
        alert("모든 값을 입력하시고 등록 버튼을 눌러주세요.");
