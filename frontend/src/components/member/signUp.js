@@ -61,7 +61,7 @@ function SignUp() {
     console.log(id);
     axios.get(`http://localhost:8000/idVerification/${id}`).then((r) => {
       console.log(r);
-      if (r === true) {
+      if (r.data === false) {
         document.getElementById("id").disabled = true;
       }
     });

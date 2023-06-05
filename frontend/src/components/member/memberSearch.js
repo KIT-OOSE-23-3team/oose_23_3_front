@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import { useCookies } from "react-cookie";
 
 function MemberSearch() {
@@ -40,17 +40,15 @@ function MemberSearch() {
   };
 
   const memberSearch = () => {
-    setId(cookies.id);
-    // axios.get(`http://localhost:8000/memberSearch/${id}`).then((r) => { 
-    // // 이거 해결 어케해야할지 모르겟음 세션 음..
-    //   console.log(r);
+    axios.get(`http://localhost:8000/memberSearch/${id}`).then((r) => {
+      console.log(r);
 
-    //   setId(r.data.id);
-    //   setName(r.data.name);
-    //   setPhoneNumber(r.data.phoneNumber);
-    //   setEmail(r.data.email);
-    //   setBirthDay(new Date(r.data.birthDay));
-    // });
+      setId(r.data.id);
+      setName(r.data.name);
+      setPhoneNumber(r.data.phoneNumber);
+      setEmail(r.data.email);
+      setBirthDay(new Date(r.data.birthDay));
+    });
   };
 
   return (
@@ -63,7 +61,6 @@ function MemberSearch() {
         placeholder="id"
         required
         onChange={idChange}
-        disabled
       ></input>
       <input
         type="password"
