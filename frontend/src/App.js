@@ -22,7 +22,7 @@ function App() {
         <BicycleCreate/>
         {/* <RentalOfficeCreateScreen/> */}
         {/* <SignUp></SignUp> */}
-        {/* <MemberSearch></MemberSearch> */]
+        {/* <MemberSearch></MemberSearch> */}
       </div>
     </div>
   );
