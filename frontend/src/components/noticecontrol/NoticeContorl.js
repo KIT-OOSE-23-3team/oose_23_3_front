@@ -58,6 +58,7 @@ const NoticeControl = () => {
       });
   };
 
+  // componentDidMount
   useEffect(() => {
     addCloseButton();
     addCheckedToggle();
