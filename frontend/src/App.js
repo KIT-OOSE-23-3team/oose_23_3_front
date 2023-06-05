@@ -19,9 +19,10 @@ function App() {
       <NavbarTop />
       <div className="main-content">
         <NavbarLeft />
+        <BicycleCreate/>
         {/* <RentalOfficeCreateScreen/> */}
         {/* <SignUp></SignUp> */}
-        <MemberSearch></MemberSearch>
+        {/* <MemberSearch></MemberSearch> */]
       </div>
     </div>
   );
