@@ -37,14 +37,17 @@ function SignUp() {
   };
 
   const submit = () => {
-    const member = new FormData();
-    member.append("identification", id);
-    member.append("password", pw);
-    member.append("rentalPassword", pw_rental);
-    member.append("name", name);
-    member.append("phoneNumber", phoneNumber);
-    member.append("email", email);
-    member.append("birthDate", birthDay);
+    const birthDayArray = birthDay.split("-");
+    const date = new Date(+birthDayArray[0], +birthDayArray[1] - 1, +birthDayArray[2] + 1);
+    const member = {
+        identification: id,
+        password: pw,
+        rentalPassword: pw_rental,
+        name: name,
+        phoneNumber: phoneNumber,
+        email: email,
+        birthDate: date
+    }
 
     axios.post("http://localhost:8000/memberReg", member).then((r) => {
       console.log(r);
@@ -61,7 +64,7 @@ function SignUp() {
     console.log(id);
     axios.get(`http://localhost:8000/idVerification/${id}`).then((r) => {
       console.log(r);
-      if (r.data === false) {
+      if (r.data === true) {
         document.getElementById("id").disabled = true;
       }
     });

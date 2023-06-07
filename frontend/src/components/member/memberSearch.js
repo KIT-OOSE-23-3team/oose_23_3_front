@@ -12,8 +12,6 @@ function MemberSearch() {
   const [email, setEmail] = useState("");
   const [birthDay, setBirthDay] = useState("");
 
-  const [cookies, SetCookie, removeCookie] = useCookies(['id']);
-
   const idChange = (e) => {
     setId(e.target.value);
   };
@@ -40,14 +38,21 @@ function MemberSearch() {
   };
 
   const memberSearch = () => {
-    axios.get(`http://localhost:8000/memberSearch/${id}`).then((r) => {
-      console.log(r);
+    axios.get(`http://localhost:8000/memberSearch`, { withCredentials : true }).then((r) => {
+        if (r.data !== "") {    //r.data가 "" -> 서버로부터 보낸 응답이 없음 -> 세션이 없음 -> 로그인하지 않은 상태
+            const birthDate = new Date(r.data.birthDate);
+            const year = birthDate.getFullYear();
+            const month = String(birthDate.getMonth() + 1).padStart(2, "0");
+            const date = String(birthDate.getDate()).padStart(2, "0");
 
-      setId(r.data.id);
-      setName(r.data.name);
-      setPhoneNumber(r.data.phoneNumber);
-      setEmail(r.data.email);
-      setBirthDay(new Date(r.data.birthDay));
+            setId(r.data.id);
+            setName(r.data.name);
+            setPhoneNumber(r.data.phoneNumber);
+            setEmail(r.data.email);
+            setBirthDay(`${year}-${month}-${date}`);
+        } else {
+            alert("로그인이 필요한 서비스입니다");
+        }
     });
   };
 

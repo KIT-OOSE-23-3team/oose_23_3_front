@@ -5,6 +5,7 @@ function Login() {
   const [id, setId] = useState("");
   const [pw, setPw] = useState("");
 
+
   const idChange = (e) => {
     setId(e.target.value);
   };
@@ -13,24 +14,21 @@ function Login() {
   };
 
   const login = () => {
-    const login = new FormData();
-    login.append("identification", id);
-    login.append("password", pw);
+    const login = {
+      identification: id,
+      password: pw
+    }
 
-    axios.post("http://localhost:8000/login", login).then((r) => {
-      console.log(r);
-    });
+    axios.post("http://localhost:8000/login", login, { withCredentials : true } ).then();
   };
 
   const adminLogin = () => {
-    const adminLogin = new FormData();
-    adminLogin.append("identification", "admin");
-    adminLogin.append("password", "pass");
-
-    axios.post("http://localhost:8000/adminLogin", adminLogin).then((r) => {
-      console.log(r);
-    });
+    axios.post("http://localhost:8000/adminLogin", {}, { withCredentials : true}).then();
   };
+
+  const logout = () => {
+    axios.get("http://localhost:8000/logout", { withCredentials : true }).then();
+  }
 
   return (
     <div>
@@ -54,6 +52,7 @@ function Login() {
       ></input>
       <input type="submit" value="로그인" onClick={login}></input>
       <input type="submit" value="관리자 로그인" onClick={adminLogin}></input>
+      <input type="submit" value="로그아웃" onClick={logout}></input>
     </div>
   );
 }
