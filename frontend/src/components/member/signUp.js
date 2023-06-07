@@ -37,14 +37,18 @@ function SignUp() {
   };
 
   const submit = () => {
-    const member = new FormData();
-    member.append("identification", id);
-    member.append("password", pw);
-    member.append("rentalPassword", pw_rental);
-    member.append("name", name);
-    member.append("phoneNumber", phoneNumber);
-    member.append("email", email);
-    member.append("birthDate", birthDay);
+    const birthDayArray = birthDay.split("-");
+    const date = new Date(+birthDayArray[0], +birthDayArray[1], +birthDayArray[2]);
+    const member = {
+        identification: id,
+        password: pw,
+        rentalPassword: pw_rental,
+        name: name,
+        phoneNumber: phoneNumber,
+        email: email,
+        birthDate: date
+    }
+    console.log(member);
 
     axios.post("http://localhost:8000/memberReg", member).then((r) => {
       console.log(r);
