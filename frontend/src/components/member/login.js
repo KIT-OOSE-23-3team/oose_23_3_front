@@ -23,13 +23,7 @@ function Login() {
   };
 
   const adminLogin = () => {
-    const adminLogin = new FormData();
-    adminLogin.append("identification", "admin");
-    adminLogin.append("password", "pass");
-
-    axios.post("http://localhost:8000/adminLogin", adminLogin).then((r) => {
-      console.log(r);
-    });
+    axios.post("http://localhost:8000/adminLogin", {}, { withCredentials : true}).then();
   };
 
   const logout = () => {
