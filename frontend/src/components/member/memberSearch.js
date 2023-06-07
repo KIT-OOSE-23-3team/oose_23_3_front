@@ -12,8 +12,6 @@ function MemberSearch() {
   const [email, setEmail] = useState("");
   const [birthDay, setBirthDay] = useState("");
 
-  const [cookies, SetCookie, removeCookie] = useCookies(['id']);
-
   const idChange = (e) => {
     setId(e.target.value);
   };

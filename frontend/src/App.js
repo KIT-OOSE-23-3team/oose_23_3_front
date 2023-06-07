@@ -10,16 +10,15 @@ import './Create.css';
 import './App.css';
 import SignUp from './components/member/signUp';
 import MemberSearch from './components/member/memberSearch';
+import Login from "./components/member/login";
 
 function App() {
-  const [cookies, SetCookie, removeCookie] = useCookies();
-  SetCookie('id', 'test');
   return (
     <div className="App">
       <NavbarTop />
       <div className="main-content">
         <NavbarLeft />
-        <MemberSearch/>
+        <Login/>
         {/* <RentalOfficeCreateScreen/> */}
         {/* <SignUp></SignUp> */}
         {/* <MemberSearch></MemberSearch> */}
