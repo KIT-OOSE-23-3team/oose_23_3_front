@@ -18,6 +18,8 @@ function App() {
       <NavbarTop />
       <div className="main-content">
         <NavbarLeft />
+          <SignUp/>
+          <MemberSearch/>
         <Login/>
         {/* <RentalOfficeCreateScreen/> */}
         {/* <SignUp></SignUp> */}

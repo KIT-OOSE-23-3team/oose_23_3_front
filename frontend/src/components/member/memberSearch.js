@@ -38,7 +38,7 @@ function MemberSearch() {
   };
 
   const memberSearch = () => {
-    axios.get(`http://localhost:8000/memberSearch/${id}`).then((r) => {
+    axios.get(`http://localhost:8000/memberSearch`, { withCredentials : true }).then((r) => {
       const birthDate = new Date(r.data.birthDate);
       const year = birthDate.getFullYear();
       const month = String(birthDate.getMonth() + 1).padStart(2, "0");
