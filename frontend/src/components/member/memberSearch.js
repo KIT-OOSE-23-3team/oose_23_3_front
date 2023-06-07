@@ -41,13 +41,16 @@ function MemberSearch() {
 
   const memberSearch = () => {
     axios.get(`http://localhost:8000/memberSearch/${id}`).then((r) => {
-      console.log(r);
+      const birthDate = new Date(r.data.birthDate);
+      const year = birthDate.getFullYear();
+      const month = String(birthDate.getMonth() + 1).padStart(2, "0");
+      const date = String(birthDate.getDate()).padStart(2, "0");
 
       setId(r.data.id);
       setName(r.data.name);
       setPhoneNumber(r.data.phoneNumber);
       setEmail(r.data.email);
-      setBirthDay(new Date(r.data.birthDay));
+      setBirthDay(`${year}-${month}-${date}`);
     });
   };
 

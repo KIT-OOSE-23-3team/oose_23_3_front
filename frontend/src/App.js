@@ -19,7 +19,7 @@ function App() {
       <NavbarTop />
       <div className="main-content">
         <NavbarLeft />
-        <SignUp/>
+        <MemberSearch/>
         {/* <RentalOfficeCreateScreen/> */}
         {/* <SignUp></SignUp> */}
         {/* <MemberSearch></MemberSearch> */}
