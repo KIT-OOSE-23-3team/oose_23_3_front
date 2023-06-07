@@ -38,7 +38,7 @@ function SignUp() {
 
   const submit = () => {
     const birthDayArray = birthDay.split("-");
-    const date = new Date(+birthDayArray[0], +birthDayArray[1], +birthDayArray[2]);
+    const date = new Date(+birthDayArray[0], +birthDayArray[1] - 1, +birthDayArray[2] + 1);
     const member = {
         identification: id,
         password: pw,
@@ -48,7 +48,6 @@ function SignUp() {
         email: email,
         birthDate: date
     }
-    console.log(member);
 
     axios.post("http://localhost:8000/memberReg", member).then((r) => {
       console.log(r);
@@ -65,7 +64,7 @@ function SignUp() {
     console.log(id);
     axios.get(`http://localhost:8000/idVerification/${id}`).then((r) => {
       console.log(r);
-      if (r.data === false) {
+      if (r.data === true) {
         document.getElementById("id").disabled = true;
       }
     });
