@@ -1,0 +1,19 @@
+.historyCheck{
+    border: 1px solid black;
+    width: 800px;
+    height: 500px;
+    margin: 0% auto;
+    margin-top: 50px;
+}
+.topbar{
+    background-color: #81c147;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    border-bottom: 1px solid black;
+}
+.smallbox{
+    border: 1px solid black;
+    margin: 20px;
+    height: 420px;
+}
