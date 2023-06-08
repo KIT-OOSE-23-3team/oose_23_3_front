@@ -44,7 +44,6 @@ const NoticeControl = () => {
               setNotices((prevNotices) => [...prevNotices, notice]);
           } else {
               alert("관리자만이 공지사항을 등록할 수 있습니다.");
-              //TODO 추후 페이지 접근 자체를 불가능하게 만들기 임시로 alert 사용
           }
       })
       .catch((error) => {
@@ -66,7 +65,6 @@ const NoticeControl = () => {
 
         setNotices(notice);
     });
-    //TODO 공지사항 조회 로직 미리 만들어둠. 추후 공지사항 조회 페이지로 옮겨야함
   }, []);
 
   const styles = {
