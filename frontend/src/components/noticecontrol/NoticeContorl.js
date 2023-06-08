@@ -68,6 +68,19 @@ const NoticeControl = () => {
   useEffect(() => {
     addCloseButton();
     addCheckedToggle();
+    axios.get("http://localhost:8000/noticeFindAll").then((res) => {
+        const notice = [];
+
+        res.data.map((e) => {
+            notice.push({
+                title: e.title,
+                text: e.text
+            });
+        })
+
+        setNotices(notice);
+    });
+    //TODO 공지사항 조회 로직 미리 만들어둠. 추후 공지사항 조회 페이지로 옮겨야함
   }, []);
 
   const styles = {
