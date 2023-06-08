@@ -22,10 +22,6 @@ function Login() {
     axios.post("http://localhost:8000/login", login, { withCredentials : true } ).then();
   };
 
-  const adminLogin = () => {
-    axios.post("http://localhost:8000/adminLogin", {}, { withCredentials : true}).then();
-  };
-
   const logout = () => {
     axios.get("http://localhost:8000/logout", { withCredentials : true }).then();
   }
@@ -51,7 +47,6 @@ function Login() {
         onChange={pwChange}
       ></input>
       <input type="submit" value="로그인" onClick={login}></input>
-      <input type="submit" value="관리자 로그인" onClick={adminLogin}></input>
       <input type="submit" value="로그아웃" onClick={logout}></input>
     </div>
   );

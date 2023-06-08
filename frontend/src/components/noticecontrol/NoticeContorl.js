@@ -7,14 +7,15 @@ const NoticeControl = () => {
   const [notices, setNotices] = useState([]);
 
   const addCloseButton = () => {
-    const myNodelist = document.getElementsByTagName('LI');
-    for (let i = 0; i < myNodelist.length; i++) {
-      const span = document.createElement('SPAN');
-      const txt = document.createTextNode('\u00D7');
-      span.className = 'close';
-      span.appendChild(txt);
-      myNodelist[i].appendChild(span);
-    }
+    // const myNodelist = document.getElementsByTagName('LI');
+    // for (let i = 0; i < myNodelist.length; i++) {
+    //   const span = document.createElement('SPAN');
+    //   const txt = document.createTextNode('\u00D7');
+    //   span.className = 'close';
+    //   span.appendChild(txt);
+    //   myNodelist[i].appendChild(span);
+    // }
+      //TODO 다른 곳에도 close 버튼이 생성됨
   };
 
   const addCheckedToggle = () => {
@@ -46,12 +47,18 @@ const NoticeControl = () => {
     };
 
     axios
-      .post('/postNotice', notice)
+      .post('http://localhost:8000/postNotice', notice, {withCredentials: true})
       .then((response) => {
-        console.log(response.data);
-        setTitle('');
-        setText('');
-        setNotices((prevNotices) => [...prevNotices, notice]);
+          console.log(response.data);
+
+          if (response.data === "등록함") {
+              setTitle("");
+              setText("");
+              setNotices((prevNotices) => [...prevNotices, notice]);
+          } else {
+              alert("관리자만이 공지사항을 등록할 수 있습니다.");
+              //TODO 추후 페이지 접근 자체를 불가능하게 만들기 임시로 alert 사용
+          }
       })
       .catch((error) => {
         console.error(error);
@@ -61,6 +68,19 @@ const NoticeControl = () => {
   useEffect(() => {
     addCloseButton();
     addCheckedToggle();
+    axios.get("http://localhost:8000/noticeFindAll").then((res) => {
+        const notice = [];
+
+        res.data.map((e) => {
+            notice.push({
+                title: e.title,
+                text: e.text
+            });
+        })
+
+        setNotices(notice);
+    });
+    //TODO 공지사항 조회 로직 미리 만들어둠. 추후 공지사항 조회 페이지로 옮겨야함
   }, []);
 
   const styles = {
@@ -92,6 +112,7 @@ const NoticeControl = () => {
       padding: '5px',
       backgroundColor: '#599732',
       color: 'white',
+      cursor: 'pointer'
     },
   };
 
