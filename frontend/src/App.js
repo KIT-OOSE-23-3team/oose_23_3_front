@@ -11,6 +11,7 @@ import './App.css';
 import SignUp from './components/member/signUp';
 import MemberSearch from './components/member/memberSearch';
 import Login from "./components/member/login";
+import NoticeContorl from "./components/noticecontrol/NoticeContorl";
 
 function App() {
   return (
@@ -18,12 +19,8 @@ function App() {
       <NavbarTop />
       <div className="main-content">
         <NavbarLeft />
-          <SignUp/>
-          <MemberSearch/>
-        <Login/>
-        {/* <RentalOfficeCreateScreen/> */}
-        {/* <SignUp></SignUp> */}
-        {/* <MemberSearch></MemberSearch> */}
+          <NoticeContorl/>
+          <Login/>
       </div>
     </div>
   );
