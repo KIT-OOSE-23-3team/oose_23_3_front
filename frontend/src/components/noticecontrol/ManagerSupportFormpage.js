@@ -5,9 +5,6 @@ const NoticeControl = () => {
   const [title, setTitle] = useState('');
   const [text, setText] = useState('');
   const [notices, setNotices] = useState([]);
-
-
-
   const addCheckedToggle = () => {
     const list = document.querySelector('ul');
     list.addEventListener('click', function (ev) {
