@@ -94,13 +94,6 @@ function SignUp() {
             required
             onChange={idChange}
           />
-        <input
-          type="button"
-          value="ID 중복 체크"
-          id="btnIdVerification"
-          name="btnIdVerification"
-          onClick={idVerification}
-        />
           <div className="signUp-label">
             이름
           </div>

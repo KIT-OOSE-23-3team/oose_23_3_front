@@ -6,20 +6,50 @@
     padding: 20px;
 }
 
+.signUp-content {
+    position: relative;
+    height: 100%;
+}
+
 .signUp-input {
-    height: 30%;
+    display: flex;
+    justify-content: center;
+    height: 10%;
 }
 
 .signUp-input .signUp-label {
-    display: inline-block;
     width: 10%;
-    border: 1px solid black;
-    border-radius: 20%;
+    height: 60%;
+    line-height: 45px;
+    border-radius: 10%;
     font-weight: bold;
     text-align: center;
     background-color: #dddddd;
+    margin: 0 3%;
+}
+
+.signUp-input input {
+    width: 10%;
+    height: 60%;
+    margin-right: 5%;
+}
+
+.signUp-input #btnIdVerification {
+    margin-left: 3%;
 }
 
 .signUp-btn {
-
+    position: absolute;
+    right: 45%;
+    width: 10%;
+    height: 8%;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 60px;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 10%;
+    background-color: #006400;
+    cursor: pointer;
+    margin-top: 2%;
 }
