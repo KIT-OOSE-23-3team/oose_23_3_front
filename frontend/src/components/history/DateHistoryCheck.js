@@ -1,5 +1,6 @@
 import React from "react";
 import './HistoryCheck.css'
+import axios from "axios";
 
 const DateHistoryCheck = () => {
     return(
