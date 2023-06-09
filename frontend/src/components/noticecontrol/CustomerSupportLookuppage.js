@@ -6,16 +6,9 @@ const CustomerSupportLookuppage = () => {
   const [selectedNotice, setSelectedNotice] = useState(null);
 
   useEffect(() => {
-    const fetchNotices = async () => {
-      try {
-        const response = await axios.get('/noticeFindAll');
-        setNotices(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchNotices();
+    axios.get("http://localhost:8000/noticeFindAll").then((r) => {
+      setNotices(r.data);
+    })
   }, []);
 
   const handleTitleClick = (notice) => {
