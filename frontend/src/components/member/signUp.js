@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import "./signUp.css"
 
 function SignUp() {
   const [id, setId] = useState("");
@@ -75,13 +76,15 @@ function SignUp() {
   };
 
   return (
-    <div className="create-container">
-      <h1>회원가입</h1>
-      <div className="input-container">
-        <div className="field-line">
-          <label htmlFor="id" className="create-input-label">
+    <div className="signUp-page">
+      <div className="signUp-title">
+        <h1>회원가입</h1>
+      </div>
+      <div className="signUp-content">
+        <div className="signUp-input">
+          <div className="signUp-label">
             ID
-          </label>
+          </div>
           <input
             type="text"
             value={id}
@@ -91,7 +94,6 @@ function SignUp() {
             required
             onChange={idChange}
           />
-        </div>
         <input
           type="button"
           value="ID 중복 체크"
@@ -99,10 +101,9 @@ function SignUp() {
           name="btnIdVerification"
           onClick={idVerification}
         />
-        <div className="field-line">
-          <label htmlFor="name" className="create-input-label">
+          <div className="signUp-label">
             이름
-          </label>
+          </div>
           <input
             type="text"
             value={name}
@@ -113,12 +114,10 @@ function SignUp() {
             onChange={nameChange}
           />
         </div>
-      </div>
-      <div className="input-container">
-        <div className="field-line">
-          <label htmlFor="password" className="create-input-label">
+      <div className="signUp-input">
+          <div className="signUp-label">
             비밀번호
-          </label>
+          </div>
           <input
             type="password"
             value={pw}
@@ -128,11 +127,9 @@ function SignUp() {
             required
             onChange={pwChange}
           />
-        </div>
-        <div className="field-line">
-          <label htmlFor="phone_number" className="create-input-label">
+          <div className="signUp-label">
             전화번호
-          </label>
+          </div>
           <input
             type="text"
             value={phoneNumber}
@@ -142,13 +139,11 @@ function SignUp() {
             required
             onChange={phoneNumberChange}
           />
-        </div>
       </div>
-      <div className="input-container">
-        <div className="field-line">
-          <label htmlFor="pw_confirm" className="create-input-label">
+      <div className="signUp-input">
+          <div className="signUp-label">
             비밀번호확인
-          </label>
+          </div>
           <input
             type="password"
             value={pw_confirm}
@@ -158,11 +153,9 @@ function SignUp() {
             required
             onChange={pwConfirmChange}
           />
-        </div>
-        <div className="field-line">
-          <label htmlFor="email" className="create-input-label">
+          <div className="signUp-label">
             이메일
-          </label>
+          </div>
           <input
             type="email"
             value={email}
@@ -172,13 +165,11 @@ function SignUp() {
             required
             onChange={emailChange}
           />
-        </div>
       </div>
-      <div className="input-container">
-        <div className="field-line">
-          <label htmlFor="pw_rental" className="create-input-label">
+      <div className="signUp-input">
+          <div className="signUp-label">
             대여비밀번호
-          </label>
+          </div>
           <input
             type="password"
             value={pw_rental}
@@ -188,11 +179,9 @@ function SignUp() {
             required
             onChange={pwRentalChange}
           />
-        </div>
-        <div className="field-line">
-          <label htmlFor="birthday" className="create-input-label">
+          <div className="signUp-label">
             생일
-          </label>
+          </div>
           <input
             type="date"
             value={birthDay}
@@ -202,9 +191,9 @@ function SignUp() {
             required
             onChange={birthDayChange}
           />
-        </div>
       </div>
-      <input type="submit" value="가입" onClick={submit} />
+        <div className="signUp-btn" onClick={submit}>등록</div>
+    </div>
     </div>
   );
 }
