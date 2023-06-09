@@ -12,6 +12,7 @@ function Rental() {
       setOfficeOptions(r.data);
 
       if (r.data.length) {
+        setOffice(r.data[0].rentalOfficeNum);
         getBicycle(r.data[0].rentalOfficeNum);
       }
     });
@@ -47,6 +48,19 @@ function Rental() {
       }
     });
   };
+
+  const dummyInsert = () => {
+    const historyCheck = {
+        bicycle: {
+          bicycleNumber: bicycleNum
+        },
+      rentalOffice: {
+        rentalOfficeNum: office
+      }
+    }
+
+    axios.post("http://localhost:8000/historyCheckDummy", historyCheck, {withCredentials: true}).then();
+  }
 
   return (
     <div className="create-container">
@@ -85,6 +99,7 @@ function Rental() {
         </div>
       </div>
       <input type="submit" value="대여" onClick={rental}></input>
+      <input type="submit" value="더미 이용내역 삽입" onClick={dummyInsert}></input>
     </div>
   );
 }

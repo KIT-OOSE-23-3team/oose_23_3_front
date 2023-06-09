@@ -28,7 +28,8 @@ function App() {
       <NavbarTop />
       <div className="main-content">
         <NavbarLeft />
-          <Rental/>
+          <BicycleHistoryCheck/>
+          <Login/>
       </div>
     </div>
   );
