@@ -14,6 +14,7 @@
 }
 
 .navbar-left li {
+  text-align: center;
   list-style: none;
   cursor:pointer;
   margin: 50px 0;

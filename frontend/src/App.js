@@ -20,6 +20,7 @@ import HistoryBoundary from "./components/history/HistoryBoundary";
 import PaymentDetailCheck from "./components/history/PaymentDetailCheck";
 import UserCheck from "./components/history/UserCheck";
 import UserHistoryCheck from "./components/history/UserHistoryCheck";
+import NavbarSignUpTop from "./NavbarSignUpTop";
 
 function App() {
   return (
