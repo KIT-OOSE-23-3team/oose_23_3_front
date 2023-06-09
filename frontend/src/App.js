@@ -11,7 +11,16 @@ import './App.css';
 import SignUp from './components/member/signUp';
 import MemberSearch from './components/member/memberSearch';
 import Login from "./components/member/login";
-import NoticeContorl from "./components/noticecontrol/NoticeContorl";
+import Rental from "./components/rental/rental";
+import BicycleHistoryCheck from "./components/rental/BicycleHistoryCheck";
+import CustomerSupportLookuppage from "./components/noticecontrol/CustomerSupportLookuppage";
+import ManagerSupportFormpage from "./components/noticecontrol/ManagerSupportFormpage";
+import DateHistoryCheck from "./components/history/DateHistoryCheck";
+import HistoryBoundary from "./components/history/HistoryBoundary";
+import PaymentDetailCheck from "./components/history/PaymentDetailCheck";
+import UserCheck from "./components/history/UserCheck";
+import UserHistoryCheck from "./components/history/UserHistoryCheck";
+import NavbarSignUpTop from "./NavbarSignUpTop";
 
 function App() {
   return (
@@ -19,7 +28,7 @@ function App() {
       <NavbarTop />
       <div className="main-content">
         <NavbarLeft />
-          <NoticeContorl/>
+          <BicycleHistoryCheck/>
           <Login/>
       </div>
     </div>

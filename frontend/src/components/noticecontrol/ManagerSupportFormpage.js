@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const NoticeControl = () => {
+const ManagerSupportFormpage = () => {
   const [title, setTitle] = useState('');
   const [text, setText] = useState('');
   const [notices, setNotices] = useState([]);

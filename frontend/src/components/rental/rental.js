@@ -7,27 +7,35 @@ function Rental() {
   const [bicycleOptions, setBicycleOptions] = useState([]);
   const [officeOptions, setOfficeOptions] = useState([]);
 
-  const getOffice = () => {
+  const init = () => {
     axios.get("http://localhost:8000/rentalOfficeFindAll").then((r) => {
-      console.log(r);
       setOfficeOptions(r.data);
+
+      if (r.data.length) {
+        setOffice(r.data[0].rentalOfficeNum);
+        getBicycle(r.data[0].rentalOfficeNum);
+      }
     });
   };
 
-  const getBicycle = () => {
+  const getBicycle = (office) => {
     axios.get(`http://localhost:8000/bicycleSearch/${office}`).then((r) => {
-      console.log(r);
       setBicycleOptions(r.data);
+      if (r.data.length) {
+        setBicycleNum(r.data[0].bicycleNumber);
+      } else {
+        setBicycleNum(null);
+      }
     });
   };
 
   useEffect(() => {
-    getOffice();
+    init();
   }, []);
 
   useEffect(() => {
     if (office) {
-      getBicycle();
+      getBicycle(office);
     }
   }, [office]);
 
@@ -40,6 +48,19 @@ function Rental() {
       }
     });
   };
+
+  const dummyInsert = () => {
+    const historyCheck = {
+        bicycle: {
+          bicycleNumber: bicycleNum
+        },
+      rentalOffice: {
+        rentalOfficeNum: office
+      }
+    }
+
+    axios.post("http://localhost:8000/historyCheckDummy", historyCheck, {withCredentials: true}).then();
+  }
 
   return (
     <div className="create-container">
@@ -56,7 +77,7 @@ function Rental() {
             onChange={(e) => setBicycleNum(e.target.value)}
           >
             {bicycleOptions.map((option) => (
-              <option key={option}>{option}</option>
+              <option value={option.bicycleNumber}>{option.bicycleNumber}</option>
             ))}
           </select>
         </div>
@@ -72,12 +93,13 @@ function Rental() {
             onChange={(e) => setOffice(e.target.value)}
           >
             {officeOptions.map((option) => (
-              <option key={option}>{option}</option>
+              <option value={option.rentalOfficeNum}>{option.rentalOfficeName}</option>
             ))}
           </select>
         </div>
       </div>
       <input type="submit" value="대여" onClick={rental}></input>
+      <input type="submit" value="더미 이용내역 삽입" onClick={dummyInsert}></input>
     </div>
   );
 }

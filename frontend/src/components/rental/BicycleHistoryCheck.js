@@ -9,21 +9,21 @@ function BicycleHistoryCheck() {
   var userId = "";
   const getBicycleHistory = () => {
     axios
-      .get(`http://localhost:8000/bicycleHistoryCheck/${userId}`, { withCredentials: true })
+      .get(`http://localhost:8000/bicycleHistoryCheck`, { withCredentials: true })
       .then((r) => {
-        console.log(r);
+          console.log(r.data);
         setHistory(r.data);
+        setList(r.data);
       });
   };
 
-  const setList = () => {
-    const updatedList = history.map((item) => item.bicycleNum);
+  const setList = (history) => {
+    const updatedList = history.map((item) => item.bicycle.bicycleNumber);
     setBicycleList(updatedList);
   };
 
   useEffect(() => {
     getBicycleHistory();
-    setList();
   }, []);
 
   const handleBicycleListChange = (e) => {
@@ -43,13 +43,13 @@ function BicycleHistoryCheck() {
           onChange={handleBicycleListChange}
         >
           {bicycleList.map((option) => {
-            <option key={option}>{option}</option>;
+            <option value={option}>{option}</option>;
           })}
         </select>
       </div>
       <div className="input-container">
         <label className="create-input-label">자전거 번호</label>
-        <label>{history.bicycleNum}</label>
+        <label>{history.bicycleNumber}</label>
         <label className="create-input-label">결제 금액</label>
         <label>{history.amount}</label>
       </div>
