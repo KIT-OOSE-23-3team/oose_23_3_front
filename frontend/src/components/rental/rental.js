@@ -7,27 +7,34 @@ function Rental() {
   const [bicycleOptions, setBicycleOptions] = useState([]);
   const [officeOptions, setOfficeOptions] = useState([]);
 
-  const getOffice = () => {
+  const init = () => {
     axios.get("http://localhost:8000/rentalOfficeFindAll").then((r) => {
-      console.log(r);
       setOfficeOptions(r.data);
+
+      if (r.data.length) {
+        getBicycle(r.data[0].rentalOfficeNum);
+      }
     });
   };
 
-  const getBicycle = () => {
+  const getBicycle = (office) => {
     axios.get(`http://localhost:8000/bicycleSearch/${office}`).then((r) => {
-      console.log(r);
       setBicycleOptions(r.data);
+      if (r.data.length) {
+        setBicycleNum(r.data[0].bicycleNumber);
+      } else {
+        setBicycleNum(null);
+      }
     });
   };
 
   useEffect(() => {
-    getOffice();
+    init();
   }, []);
 
   useEffect(() => {
     if (office) {
-      getBicycle();
+      getBicycle(office);
     }
   }, [office]);
 
@@ -56,7 +63,7 @@ function Rental() {
             onChange={(e) => setBicycleNum(e.target.value)}
           >
             {bicycleOptions.map((option) => (
-              <option key={option}>{option}</option>
+              <option value={option.bicycleNumber}>{option.bicycleNumber}</option>
             ))}
           </select>
         </div>
@@ -72,7 +79,7 @@ function Rental() {
             onChange={(e) => setOffice(e.target.value)}
           >
             {officeOptions.map((option) => (
-              <option key={option}>{option}</option>
+              <option value={option.rentalOfficeNum}>{option.rentalOfficeName}</option>
             ))}
           </select>
         </div>
