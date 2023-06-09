@@ -27,7 +27,7 @@ function App() {
       <NavbarTop />
       <div className="main-content">
         <NavbarLeft />
-          <UserHistoryCheck/>
+          <SignUp/>
       </div>
     </div>
   );
