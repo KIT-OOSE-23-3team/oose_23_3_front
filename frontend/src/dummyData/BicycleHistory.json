@@ -1,0 +1,67 @@
+[
+    {
+      "bicycle": {
+        "bicycleNumber": 4,
+        "isBroken": false,
+        "isRented": false
+      },
+      "historyId": 12,
+      "member": {
+        "birthDate": "2000-03-04",
+        "email": "test@naver.com",
+        "identification": "test",
+        "name": "name",
+        "password": "testPw",
+        "phoneNumber": "01012345678",
+        "registrationDate": "2023-06-08",
+        "rentalPassword": "rentalPW"
+      },
+      "mileage": null,
+      "paymentMethod": null,
+      "rentalOffice": {
+        "bicycleList": [1, 2, 3, 4, 7],
+        "maximumBicycle": 10,
+        "noticeList": [],
+        "rentalOfficeName": "aa대여소",
+        "rentalOfficeNum": 1
+      },
+      "rentalPayment": null,
+      "rentalTime": "2023-06-09 00:29:26",
+      "returnOffice": "bb대여소",
+      "returnTime": null,
+      "travelTime": null
+    },
+    {
+        "bicycle": {
+          "bicycleNumber": 7,
+          "isBroken": false,
+          "isRented": false
+        },
+        "historyId": 13,
+        "member": {
+          "birthDate": "2000-03-04",
+          "email": "test@naver.com",
+          "identification": "test",
+          "name": "name",
+          "password": "testPw",
+          "phoneNumber": "01012345678",
+          "registrationDate": "2023-06-08",
+          "rentalPassword": "rentalPW"
+        },
+        "mileage": null,
+        "paymentMethod": null,
+        "rentalOffice": {
+          "bicycleList": [1, 2, 3, 4, 7],
+          "maximumBicycle": 10,
+          "noticeList": [],
+          "rentalOfficeName": "aa대여소",
+          "rentalOfficeNum": 1
+        },
+        "rentalPayment": null,
+        "rentalTime": "2023-06-09 01:29:27",
+        "returnOffice": "bb대여소",
+        "returnTime": null,
+        "travelTime": null
+      }
+  ]
+  
