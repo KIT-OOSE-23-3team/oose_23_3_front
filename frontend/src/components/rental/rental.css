@@ -1,0 +1,78 @@
+.rental-page {
+    width: 100%;
+}
+
+.rental-page .rental-content {
+    display: flex;
+    height: 70%;
+}
+
+.rental-page .rental-content .mapAPI {
+    width: 50%;
+    height: 100%;
+    border: 1px solid black;
+    margin: 0 5%;
+}
+
+.rental-page .rental-content .rental-inputContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 50%;
+}
+
+.rental-page .rental-content .rental-inputContainer .rental-input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 5%;
+}
+
+.rental-page .rental-content .rental-inputContainer .rental-input .rental-inputTitle {
+    width: 20%;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #999999;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5%;
+    font-weight: bold;
+    line-height: 45px;
+}
+
+.rental-page .rental-content .rental-inputContainer .rental-input .rental-inputBox {
+    height: 55px;
+    width: 50%;
+}
+
+.rental-page .rental-content .rental-inputContainer .rental-input .rental-inputBox .bicycleNum {
+    height: 100%;
+    width: 100%;
+}
+
+.rental-page .rental-content .rental-inputContainer .rental-input .rental-inputBox .office {
+    height: 100%;
+    width: 100%;
+}
+
+.rental-page .rental-btnArea {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.rental-page .rental-btnArea span {
+    height: 60px;
+    line-height: 60px;
+    width: 10%;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 10%;
+    background-color: #006400;
+    cursor: pointer;
+}

@@ -28,8 +28,7 @@ function App() {
       <NavbarTop />
       <div className="main-content">
         <NavbarLeft />
-          <BicycleHistoryCheck/>
-          <Login/>
+          <CustomerSupportLookuppage/>
       </div>
     </div>
   );

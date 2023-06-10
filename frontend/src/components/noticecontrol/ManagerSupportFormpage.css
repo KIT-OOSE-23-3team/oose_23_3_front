@@ -1,0 +1,53 @@
+.noticeReg-Page {
+    width: 100%;
+    text-align: center;
+}
+
+.noticeReg-Page h2 {
+    padding: 20px;
+}
+
+.noticeReg-Page .noticeReg-input {
+    margin-bottom: 5%;
+}
+
+.noticeReg-Page .noticeReg-input .noticeReg-label {
+    height: 60%;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #999999;
+    width: 10%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 3%;
+    font-weight: bold;
+    line-height: 45px;
+}
+
+.noticeReg-Page .noticeReg-input #myTitleInput {
+    width: 35%;
+    height: 57px;
+}
+
+.noticeReg-Page .noticeReg-input #myContentInput {
+    height: 150px;
+    width: 35%;
+    resize: none;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.noticeReg-Page #noticeReg-reg {
+    display: inline-block;
+    width: 10%;
+    height: 8%;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 60px;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 10%;
+    background-color: #006400;
+    cursor: pointer;
+    margin-top: 2%;
+}

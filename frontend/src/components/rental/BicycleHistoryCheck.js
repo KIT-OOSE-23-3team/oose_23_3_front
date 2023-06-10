@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import "./BicycleHistoryCheck.css"
 
 function BicycleHistoryCheck() {
   const [bicycleNum, setBicycleNum] = useState();
@@ -32,42 +33,47 @@ function BicycleHistoryCheck() {
   };
 
   return (
-    <div className="create-container">
-      <div className="input-container">
-        <label htmlFor="bicycleList" className="create-input-label">
-          자전거 번호 목록
-        </label>
-        <select
-          className="bicycleList"
-          multiple
-          onChange={handleBicycleListChange}
-        >
-          {bicycleList.map((option) => {
-            <option value={option}>{option}</option>;
-          })}
-        </select>
-      </div>
-      <div className="input-container">
-        <label className="create-input-label">자전거 번호</label>
-        <label>{history.bicycleNumber}</label>
-        <label className="create-input-label">결제 금액</label>
-        <label>{history.amount}</label>
-      </div>
-      <div className="input-container">
-        <label className="create-input-label">이용 시간</label>
-        <label>{history.time}</label>
-      </div>
-      <div className="input-container">
-        <label className="create-input-label">대여소</label>
-        <label>{history.rentalOffice}</label>
-        <label className="create-input-label">반납 대여소</label>
-        <label>{history.returnOffice}</label>
-      </div>
-      <div className="input-container">
-        <label className="create-input-label">주행거리</label>
-        <label>{history.mileage}</label>
-      </div>
-      <input type="button" value="확인"></input>
+    <div className="bicycleHistoryCheck-page">
+        <div className="bicycleHistoryCheck-content">
+            <div className="bicycleHistoryCheck-bicycleArea">
+                <h1>자전거 번호 목록</h1>
+                <select
+                className="bicycleList"
+                multiple
+                onChange={handleBicycleListChange}
+                >
+                {bicycleList.map((option) => {
+                    <option value={option}>{option}</option>;
+                })}
+                </select>
+            </div>
+            <div className="bicycleHistoryCheck-historyArea">
+                <h1>자전거 이용내역 조회</h1>
+                <div className="bicycleHistoryCheck-historyContainer">
+                    <div className="bicycleHistoryCheck-historyTitle">
+                        <label>자전거 번호</label>
+                        <label>결제 금액</label>
+                        <label>이용 시간</label>
+                        <label>대여소</label>
+                        <label>반납 대여소</label>
+                        <label>주행거리</label>
+                    </div>
+
+                    <div className="bicycleHistoryCheck-historyContent">
+                        {/* 아래 div를 map을 돌려서 동적 생성 */}
+                        <div className="bicycleHistoryCheck-historyElement">
+                            <label>{/*{history.bicycleNumber}*/ 1}</label>
+                            <label>{/*{history.amount}*/} 10000</label>
+                            <label>{/*{history.time}*/} 14:37</label>
+                            <label>{/*{history.rentalOffice}*/} 성민대여소</label>
+                            <label>{/*{history.returnOffice}*/} 상헌대여소</label>
+                            <label>{/*{history.mileage}*/} 3.2km</label>
+                        </div>
+                    </div>
+                </div>
+                <span className="bicycleHistoryCheck-okBtn">확인</span>
+            </div>
+        </div>
     </div>
   );
 }
