@@ -9,10 +9,6 @@
     height: 100%;
 }
 
-.noticeSearch-page .noticeSearch-content .noticeSearch-listArea {
-    margin-right: 20px;
-}
-
 .noticeSearch-page .noticeSearch-content h1 {
     text-align: center;
     margin-bottom: 10px;
@@ -21,6 +17,7 @@
 .noticeSearch-page .noticeSearch-content .noticeSearch-listArea {
     height: 100%;
     width: 30%;
+    margin-right: 20px;
 }
 
 .noticeSearch-page .noticeSearch-content .noticeSearch-listArea .noticeSearch-list {
