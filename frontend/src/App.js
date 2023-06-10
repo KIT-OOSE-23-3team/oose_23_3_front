@@ -28,7 +28,7 @@ function App() {
       <NavbarTop />
       <div className="main-content">
         <NavbarLeft />
-          <ManagerSupportFormpage/>
+          <CustomerSupportLookuppage/>
       </div>
     </div>
   );
