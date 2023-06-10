@@ -16,8 +16,8 @@
         "registrationDate": "2023-06-08",
         "rentalPassword": "rentalPW"
       },
-      "mileage": null,
-      "paymentMethod": null,
+      "mileage": "13.0km",
+      "paymentMethod": "카드",
       "rentalOffice": {
         "bicycleList": [1, 2, 3, 4, 7],
         "maximumBicycle": 10,
@@ -25,11 +25,43 @@
         "rentalOfficeName": "aa대여소",
         "rentalOfficeNum": 1
       },
-      "rentalPayment": null,
+      "rentalPayment": "2,900원",
       "rentalTime": "2023-06-09 00:29:26",
       "returnOffice": "bb대여소",
-      "returnTime": null,
-      "travelTime": null
+      "returnTime": "2023-06-09 00:59:26",
+      "travelTime": "00:30:00"
+    },
+    {
+      "bicycle": {
+        "bicycleNumber": 4,
+        "isBroken": false,
+        "isRented": false
+      },
+      "historyId": 13,
+      "member": {
+        "birthDate": "2000-03-04",
+        "email": "test@naver.com",
+        "identification": "test",
+        "name": "name",
+        "password": "testPw",
+        "phoneNumber": "01012345678",
+        "registrationDate": "2023-06-08",
+        "rentalPassword": "rentalPW"
+      },
+      "mileage": "12.9km",
+      "paymentMethod": "카드",
+      "rentalOffice": {
+        "bicycleList": [1, 2, 3, 4, 7],
+        "maximumBicycle": 10,
+        "noticeList": [],
+        "rentalOfficeName": "aa대여소",
+        "rentalOfficeNum": 1
+      },
+      "rentalPayment": "2,900원",
+      "rentalTime": "2023-06-09 00:29:26",
+      "returnOffice": "bb대여소",
+      "returnTime": "2023-06-09 00:59:26",
+      "travelTime": "00:30:00"
     },
     {
         "bicycle": {
@@ -37,7 +69,7 @@
           "isBroken": false,
           "isRented": false
         },
-        "historyId": 13,
+        "historyId": 14,
         "member": {
           "birthDate": "2000-03-04",
           "email": "test@naver.com",
@@ -48,8 +80,8 @@
           "registrationDate": "2023-06-08",
           "rentalPassword": "rentalPW"
         },
-        "mileage": null,
-        "paymentMethod": null,
+        "mileage": "10.1km",
+        "paymentMethod": "카드",
         "rentalOffice": {
           "bicycleList": [1, 2, 3, 4, 7],
           "maximumBicycle": 10,
@@ -57,11 +89,43 @@
           "rentalOfficeName": "aa대여소",
           "rentalOfficeNum": 1
         },
-        "rentalPayment": null,
+        "rentalPayment": "1,800원",
+        "rentalTime": "2023-06-09 01:29:27",
+        "returnOffice": "bbc대여소",
+        "returnTime": "2023-06-09 01:59:26",
+        "travelTime": "00:29:59"
+      },
+      {
+        "bicycle": {
+          "bicycleNumber": 7,
+          "isBroken": false,
+          "isRented": false
+        },
+        "historyId": 15,
+        "member": {
+          "birthDate": "2000-03-04",
+          "email": "test@naver.com",
+          "identification": "test",
+          "name": "name",
+          "password": "testPw",
+          "phoneNumber": "01012345678",
+          "registrationDate": "2023-06-08",
+          "rentalPassword": "rentalPW"
+        },
+        "mileage": "10.1km",
+        "paymentMethod": "카드",
+        "rentalOffice": {
+          "bicycleList": [1, 2, 3, 4, 7],
+          "maximumBicycle": 10,
+          "noticeList": [],
+          "rentalOfficeName": "aa대여소",
+          "rentalOfficeNum": 1
+        },
+        "rentalPayment": "1,800원",
         "rentalTime": "2023-06-09 01:29:27",
         "returnOffice": "bb대여소",
-        "returnTime": null,
-        "travelTime": null
+        "returnTime": "2023-06-09 01:59:26",
+        "travelTime": "00:29:59"
       }
   ]
   

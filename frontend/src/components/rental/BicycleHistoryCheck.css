@@ -21,6 +21,11 @@
 
 .bicycleHistoryCheck-page .bicycleHistoryCheck-content .bicycleHistoryCheck-bicycleArea .bicycleList {
     /* select 스타일 처리하는 곳. "해줘" */
+    /* 헉 진짜 위기 */
+
+    height: 85%;
+    width: 100%;
+    font-size: 26px;
 }
 
 .bicycleHistoryCheck-page .bicycleHistoryCheck-content .bicycleHistoryCheck-historyArea {
