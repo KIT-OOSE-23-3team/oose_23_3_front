@@ -27,7 +27,7 @@ const CustomerSupportLookuppage = () => {
     <div className="noticeSearch-page">
       <div className="noticeSearch-content">
         <div className="noticeSearch-listArea">
-          <h3>목록</h3>
+          <h1>목록</h1>
           <div className="noticeSearch-list">
             <ul id="myUL">
               {notices.map((notice) => (
@@ -41,14 +41,16 @@ const CustomerSupportLookuppage = () => {
                     checked={selectedNotice === notice}
                     onChange={() => handleCheckboxChange(notice)}
                   />
-                  {notice.title}
+                  <span>
+                    {notice.title}
+                  </span>
                 </li>
               ))}
             </ul>
           </div>
         </div>
         <div className="noticeSearch-viewArea">
-          <h3>공지사항 조회</h3>
+          <h1>공지사항 조회</h1>
           <div className="noticeSearch-viewContainer">
             <div className="noticeSearch-view">
               <div className="noticeSearch-viewLine">
