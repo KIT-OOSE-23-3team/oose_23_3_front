@@ -1,0 +1,98 @@
+.noticeSearch-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.noticeSearch-page .noticeSearch-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.noticeSearch-page .noticeSearch-content .noticeSearch-listArea {
+    margin-right: 20px;
+}
+
+.noticeSearch-page .noticeSearch-content h3 {
+    margin-bottom: 10px;
+}
+
+.noticeSearch-page .noticeSearch-content .noticeSearch-listArea .noticeSearch-list {
+    background-color: #dcdcdc;
+    flex: 0 0 30%;
+    height: 200px;
+    width: 100px;   /* 여기가 목록 전체 배경 조절 */
+    overflow: auto;
+    border-radius: 5px;
+}
+
+.noticeSearch-page .noticeSearch-content .noticeSearch-listArea .noticeSearch-list #myUL {
+    list-style: none;
+    padding: 0;
+}
+
+.noticeSearch-page .noticeSearch-content .noticeSearch-listArea .noticeSearch-list #myLI {
+    background-color: #dcdcdc;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    height: 20px;
+    width: 98px; /* 여기가 목록 각개 칸 조절하는 곳 */
+    overflow: hidden;
+}
+
+.noticeSearch-page .noticeSearch-content .noticeSearch-viewArea .noticeSearch-viewContainer {
+    background-color: #dcdcdc;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 200px;
+    width: 300px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.noticeSearch-page .noticeSearch-content .noticeSearch-viewArea .noticeSearch-viewContainer .noticeSearch-view {
+    padding: 10px;
+}
+
+.noticeSearch-page .noticeSearch-content .noticeSearch-viewArea .noticeSearch-viewContainer .noticeSearch-view .noticeSearch-viewLine {
+    display: flex;
+    align-items: center;
+}
+
+.noticeSearch-page .noticeSearch-content .noticeSearch-viewArea .noticeSearch-viewContainer .noticeSearch-view .noticeSearch-viewLine .noticeSearch-viewTitle {
+    background-color: #a0a0a0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    height: 30px;
+    width: 40px;
+    overflow: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.noticeSearch-page .noticeSearch-content .noticeSearch-viewArea .noticeSearch-viewContainer .noticeSearch-view .noticeSearch-viewLine .noticeSearch-viewTitleContent {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    margin-left: 5px;
+    padding: 5px;
+    width: 200px; /* 여기가 제목 칸 늘리는 부분 */
+    overflow: auto;
+}
+
+.noticeSearch-page .noticeSearch-content .noticeSearch-viewArea .noticeSearch-viewContainer .noticeSearch-view .noticeSearch-viewLine .noticeSearch-viewContent {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    margin-left: 5px;
+    height: 135px;
+    width: 210px;   /* 여기가 내용 칸 늘리는 부분 */
+    overflow: auto;
+}
