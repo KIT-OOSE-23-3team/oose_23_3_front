@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import "./rental.css"
 
 function Rental() {
   const [bicycleNum, setBicycleNum] = useState();
@@ -63,14 +64,16 @@ function Rental() {
   }
 
   return (
-    <div className="create-container">
+    <div className="rental-page">
       <h1>자전거 대여</h1>
-      <div className="input-container">{/* <mapAPI /> */}</div>
-      <div className="input-container">
-        <label htmlFor="bicycleNum" className="create-input-label">
+      <div className="rental-content">
+      <div className="mapAPI">지도가 나와야해요 뀨</div>
+        <div className="rental-inputContainer">
+      <div className="rental-input">
+        <label htmlFor="bicycleNum" className="rental-inputTitle">
           자전거 번호
         </label>
-        <div className="inputBox">
+        <div className="rental-inputBox">
           <select
             className="bicycleNum"
             value={bicycleNum}
@@ -82,11 +85,11 @@ function Rental() {
           </select>
         </div>
       </div>
-      <div className="input-container">
-        <label htmlFor="office" className="create-input-label">
+      <div className="rental-input">
+        <label htmlFor="office" className="rental-inputTitle">
           대여소
         </label>
-        <div className="inputBox">
+        <div className="rental-inputBox">
           <select
             className="office"
             value={office}
@@ -98,7 +101,11 @@ function Rental() {
           </select>
         </div>
       </div>
-      <input type="submit" value="대여" onClick={rental}></input>
+        </div>
+      </div>
+      <div className="rental-btnArea">
+      <span onClick={rental}>대여</span>
+      </div>
       <input type="submit" value="더미 이용내역 삽입" onClick={dummyInsert}></input>
     </div>
   );
