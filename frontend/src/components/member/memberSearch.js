@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
+import "./signUp.css"
 
 function MemberSearch() {
   const [id, setId] = useState("");
@@ -64,13 +65,15 @@ function MemberSearch() {
   }, []);
 
   return (
-    <div className="create-container">
-      <h1>회원가입</h1>
-      <div className="input-container">
-        <div className="field-line">
-          <label htmlFor="id" className="create-input-label">
+    <div className="signUp-page">
+      <div className="signUp-title">
+        <h1>개인정보 수정</h1>
+      </div>
+      <div className="signUp-content">
+        <div className="signUp-input">
+          <div className="signUp-label">
             ID
-          </label>
+          </div>
           <input
             type="text"
             value={id}
@@ -80,11 +83,9 @@ function MemberSearch() {
             required
             onChange={idChange}
           />
-        </div>
-        <div className="field-line">
-          <label htmlFor="name" className="create-input-label">
+          <div className="signUp-label">
             이름
-          </label>
+          </div>
           <input
             type="text"
             value={name}
@@ -95,12 +96,10 @@ function MemberSearch() {
             onChange={nameChange}
           />
         </div>
-      </div>
-      <div className="input-container">
-        <div className="field-line">
-          <label htmlFor="password" className="create-input-label">
+      <div className="signUp-input">
+          <div className="signUp-label">
             비밀번호
-          </label>
+          </div>
           <input
             type="password"
             value={pw}
@@ -110,11 +109,9 @@ function MemberSearch() {
             required
             onChange={pwChange}
           />
-        </div>
-        <div className="field-line">
-          <label htmlFor="phone_number" className="create-input-label">
+          <div className="signUp-label">
             전화번호
-          </label>
+          </div>
           <input
             type="text"
             value={phoneNumber}
@@ -124,13 +121,11 @@ function MemberSearch() {
             required
             onChange={phoneNumberChange}
           />
-        </div>
       </div>
-      <div className="input-container">
-        <div className="field-line">
-          <label htmlFor="pw_confirm" className="create-input-label">
+      <div className="signUp-input">
+          <div className="signUp-label">
             비밀번호확인
-          </label>
+          </div>
           <input
             type="password"
             value={pw_confirm}
@@ -140,11 +135,9 @@ function MemberSearch() {
             required
             onChange={pwConfirmChange}
           />
-        </div>
-        <div className="field-line">
-          <label htmlFor="email" className="create-input-label">
+          <div className="signUp-label">
             이메일
-          </label>
+          </div>
           <input
             type="email"
             value={email}
@@ -154,13 +147,11 @@ function MemberSearch() {
             required
             onChange={emailChange}
           />
-        </div>
       </div>
-      <div className="input-container">
-        <div className="field-line">
-          <label htmlFor="pw_rental" className="create-input-label">
+      <div className="signUp-input">
+          <div className="signUp-label">
             대여비밀번호
-          </label>
+          </div>
           <input
             type="password"
             value={pw_rental}
@@ -170,11 +161,9 @@ function MemberSearch() {
             required
             onChange={pwRentalChange}
           />
-        </div>
-        <div className="field-line">
-          <label htmlFor="birthday" className="create-input-label">
+          <div className="signUp-label">
             생일
-          </label>
+          </div>
           <input
             type="date"
             value={birthDay}
@@ -184,9 +173,9 @@ function MemberSearch() {
             required
             onChange={birthDayChange}
           />
-        </div>
       </div>
-      <input type="submit" value="변경"/>
+        <div className="signUp-btn">수정</div>
+    </div>
     </div>
   );
 }
