@@ -13,17 +13,57 @@
     text-align: center;
   }
   
-  .DateHistoryCheck-page .DateHistoryCheck-content .DateHistoryCheck-bicycleArea {
+  .DateHistoryCheck-page .DateHistoryCheck-content .DateHistoryCheck-dateArea {
     height: 100%;
     width: 30%;
     margin-right: 20px;
   }
-  
-  .DateHistoryCheck-page .DateHistoryCheck-content .DateHistoryCheck-bicycleArea .memberList {
-    height: 85%;
-    width: 100%;
-    font-size: 26px;
-  }
+
+.DateHistoryCheck-page .DateHistoryCheck-content .DateHistoryCheck-dateArea .DateHistoryCheck-dateContainer {
+  position: relative;
+  background-color: #dcdcdc;
+  height: 85%;
+  width: 100%;
+}
+
+.DateHistoryCheck-page .DateHistoryCheck-content .DateHistoryCheck-dateArea .DateHistoryCheck-dateContainer .DateHistoryCheck-searchBtn {
+  display: inline-block;
+  position: absolute;
+  background-color: #a0a0a0;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-weight: bold;
+  width: 20%;
+  height: 7%;
+  text-align: center;
+  line-height: 42px;
+  right: 50%;
+  transform: translate(50%, 0);
+}
+
+.DateHistoryCheck-page .DateHistoryCheck-content .DateHistoryCheck-dateArea .DateHistoryCheck-dateContainer .DateHistoryCheck-dateLine {
+  display: flex;
+  flex-direction: column;
+  height: 40%;
+  width: 100%;
+}
+
+.DateHistoryCheck-page .DateHistoryCheck-content .DateHistoryCheck-dateArea .DateHistoryCheck-dateContainer .DateHistoryCheck-dateLine label {
+  display: inline-block;
+  background-color: #a0a0a0;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-weight: bold;
+  width: 15%;
+  height: 18%;
+  text-align: center;
+  line-height: 42px;
+  margin: 5%;
+}
+
+.DateHistoryCheck-page .DateHistoryCheck-content .DateHistoryCheck-dateArea .DateHistoryCheck-dateContainer .DateHistoryCheck-dateLine input {
+  height: 20%;
+}
   
   .DateHistoryCheck-page .DateHistoryCheck-content .DateHistoryCheck-historyArea {
     position: relative;
@@ -39,7 +79,7 @@
     background-color: #dcdcdc;
   }
   
-  .DateHistoryCheck-page .DateHistoryCheck-content .DateHistoryCheck-historyArea .DateHistoryCheck-historyContainer .bicycleHistoryCheck-history {
+  .DateHistoryCheck-page .DateHistoryCheck-content .DateHistoryCheck-historyArea .DateHistoryCheck-historyContainer .dateHistoryCheck-history {
     display: flex;
     flex-direction: column;
     width: 100%;

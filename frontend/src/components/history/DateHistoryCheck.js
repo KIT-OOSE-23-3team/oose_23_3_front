@@ -32,17 +32,23 @@ const DateHistoryCheck = () => {
   return (
     <div className="DateHistoryCheck-page">
       <div className="DateHistoryCheck-content">
-        <div className="DateHistoryCheck-bicycleArea">
+        <div className="DateHistoryCheck-dateArea">
           <h1>기간 설정</h1>
-          <label>시작일</label>
-          <input
-            type="date"
-            value={startDate}
-            onChange={handleChangeStartDate}
-          />
-          <label>종료일</label>
-          <input type="date" value={endDate} onChange={handleChangeEndDate} />
-          <input type="button" onClick={handleSearch} value="조회" />
+          <div className="DateHistoryCheck-dateContainer">
+            <div className="DateHistoryCheck-dateLine">
+              <label>시작일</label>
+              <input
+                type="date"
+                value={startDate}
+                onChange={handleChangeStartDate}
+              />
+            </div>
+            <div className="DateHistoryCheck-dateLine">
+              <label>종료일</label>
+              <input type="date" value={endDate} onChange={handleChangeEndDate} />
+            </div>
+            <div className="DateHistoryCheck-searchBtn" onClick={handleSearch}>조회</div>
+          </div>
         </div>
         <div className="DateHistoryCheck-historyArea">
           <h1>기간별 이용내역 조회</h1>
