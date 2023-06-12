@@ -71,14 +71,14 @@ const PaymentDetailCheck = () => {
             <div className="paymentDetailCheck-historyContent">
               {selectedPaymentHistory && (
                 <div className="paymentDetailCheck-historyElement">
-                  <label>{selectedMemberId.bicycle.bicycleNumber}</label>
+                  <label>{selectedMemberId.historyId}</label>
                   <label>{selectedMemberId.rentalPayment}</label>
-                  <label>{selectedMemberId.rentalTime}</label>
+                  <label>{selectedMemberId.paymentTime}</label>
                   <label>
-                    {selectedMemberId.rentalOffice.rentalOfficeName}
+                    {selectedMemberId.rentalOffice.refundTime}
                   </label>
-                  <label>{selectedMemberId.returnOffㅁice}</label>
-                  <label>{selectedMemberId.mileage}</label>
+                  <label>{selectedMemberId.paymentState}</label>
+                  <label>{selectedMemberId.paymentMethod}</label>
                 </div>
               )}
             </div>
