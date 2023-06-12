@@ -19,12 +19,37 @@ function PaymentDummyInsert() {
   };
 
   const handleSubmit = () => {
-    axios
-      .post("http://localhost:8000/postPaymentData", {
-        price,
-        payState,
-        payMethod,
-      })
+      let paymentMethod;
+      let paymentStatus;
+
+      if (payMethod === "교통카드") {
+          paymentMethod = "TRANSPORTATION_CARD";
+      } else if (payMethod === "신용카드") {
+          paymentMethod = "CELLPHONE";
+      } else if (payMethod === "휴대전화") {
+          paymentMethod = "CREDIT_CARD";
+      }
+
+      if (payState === "승인") {
+          paymentStatus = "APPROVAL";
+      } else if (payState === "거부") {
+          paymentStatus = "REFUSE";
+      } else if (payState === "대기") {
+          paymentStatus = "HOLD";
+      } else if (payState === "환불") {
+          paymentStatus = "REFUND";
+      }
+
+      axios
+      .post("http://localhost:8000/paymentDetailInsert", {
+          bicycle: {
+              bicycleNumber: 1
+          },
+          refundTime: payState === "환불" ? new Date() : "",
+          paymentAmount: price,
+          paymentMethod: paymentMethod,
+          paymentStatus: paymentStatus,
+      }, {withCredentials: true})
       .then((response) => {
         console.log(response);
       })
