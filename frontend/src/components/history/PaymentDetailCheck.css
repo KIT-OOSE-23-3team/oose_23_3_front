@@ -1,0 +1,106 @@
+.paymentDetailCheck-page {
+    width: 100%;
+}
+
+.paymentDetailCheck-page .paymentDetailCheck-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+}
+
+.paymentDetailCheck-page .paymentDetailCheck-content h1 {
+    text-align: center;
+}
+
+.paymentDetailCheck-page .paymentDetailCheck-content .paymentDetailCheck-bicycleArea {
+    height: 100%;
+    width: 30%;
+    margin-right: 20px;
+}
+
+.paymentDetailCheck-page .paymentDetailCheck-content .paymentDetailCheck-bicycleArea .memberList {
+    height: 85%;
+    width: 100%;
+    font-size: 26px;
+}
+
+.paymentDetailCheck-page .paymentDetailCheck-content .paymentDetailCheck-historyArea {
+    position: relative;
+    width: 60%;
+    height: 100%;
+}
+
+.paymentDetailCheck-page .paymentDetailCheck-content .paymentDetailCheck-historyArea .paymentDetailCheck-historyContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 85%;
+    background-color: #dcdcdc;
+}
+
+.paymentDetailCheck-page .paymentDetailCheck-content .paymentDetailCheck-historyArea .paymentDetailCheck-historyContainer .bicycleHistoryCheck-history {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.paymentDetailCheck-page .paymentDetailCheck-content .paymentDetailCheck-historyArea .paymentDetailCheck-historyContainer .paymentDetailCheck-historyTitle {
+    display: flex;
+    justify-content: center;
+    margin: 5%;
+    }
+    
+    .paymentDetailCheck-page .paymentDetailCheck-content .paymentDetailCheck-historyArea .paymentDetailCheck-historyContainer .paymentDetailCheck-historyTitle label {
+    display: inline-block;
+    background-color: #a0a0a0;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 15%;
+    height: 100%;
+    text-align: center;
+    line-height: 42px;
+    margin: 0 1%;
+    }
+    
+    .paymentDetailCheck-page .paymentDetailCheck-content .paymentDetailCheck-historyArea .paymentDetailCheck-historyContainer .paymentDetailCheck-historyContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 5%;
+    }
+    
+    .paymentDetailCheck-page .paymentDetailCheck-content .paymentDetailCheck-historyArea .paymentDetailCheck-historyContainer .paymentDetailCheck-historyContent .paymentDetailCheck-historyElement {
+    display: flex;
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 44px;
+    }
+    
+    .paymentDetailCheck-page .paymentDetailCheck-content .paymentDetailCheck-historyArea .paymentDetailCheck-historyContainer .paymentDetailCheck-historyContent .paymentDetailCheck-historyElement label {
+    display: inline-block;
+    width: 17%;
+    line-height: 42px;
+    border: 1px solid black;
+    }
+    
+    .paymentDetailCheck-page .paymentDetailCheck-content .paymentDetailCheck-historyArea .paymentDetailCheck-okBtn {
+    position: absolute;
+    width: 15%;
+    height: 8%;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 60px;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 10%;
+    background-color: #006400;
+    cursor: pointer;
+    top: 100%;
+    right: 50%;
+    transform: translate(50%, 0);
+    }

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./rental.css"
+import MapAPI from "./mapAPI";
 
 function Rental() {
   const [bicycleNum, setBicycleNum] = useState();
@@ -67,7 +68,7 @@ function Rental() {
     <div className="rental-page">
       <h1>자전거 대여</h1>
       <div className="rental-content">
-      <div className="mapAPI">지도가 나와야해요 뀨</div>
+      <div className="mapAPI"><MapAPI /></div>
         <div className="rental-inputContainer">
       <div className="rental-input">
         <label htmlFor="bicycleNum" className="rental-inputTitle">

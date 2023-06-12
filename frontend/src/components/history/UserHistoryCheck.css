@@ -1,0 +1,106 @@
+.userHistoryCheck-page {
+    width: 100%;
+    }
+    
+    .userHistoryCheck-page .userHistoryCheck-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+    }
+    
+    .userHistoryCheck-page .userHistoryCheck-content h1 {
+    text-align: center;
+    }
+    
+    .userHistoryCheck-page .userHistoryCheck-content .userHistoryCheck-bicycleArea {
+    height: 100%;
+    width: 30%;
+    margin-right: 20px;
+    }
+    
+    .userHistoryCheck-page .userHistoryCheck-content .userHistoryCheck-bicycleArea .memberList {
+    height: 85%;
+    width: 100%;
+    font-size: 26px;
+    }
+    
+    .userHistoryCheck-page .userHistoryCheck-content .userHistoryCheck-historyArea {
+    position: relative;
+    width: 60%;
+    height: 100%;
+    }
+    
+    .userHistoryCheck-page .userHistoryCheck-content .userHistoryCheck-historyArea .userHistoryCheck-historyContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 85%;
+    background-color: #dcdcdc;
+    }
+    
+    .userHistoryCheck-page .userHistoryCheck-content .userHistoryCheck-historyArea .userHistoryCheck-historyContainer .userHistoryCheck-history {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    }
+    
+    .userHistoryCheck-page .userHistoryCheck-content .userHistoryCheck-historyArea .userHistoryCheck-historyContainer .userHistoryCheck-historyTitle {
+    display: flex;
+    justify-content: center;
+    margin: 5%;
+    }
+    
+    .userHistoryCheck-page .userHistoryCheck-content .userHistoryCheck-historyArea .userHistoryCheck-historyContainer .userHistoryCheck-historyTitle label {
+    display: inline-block;
+    background-color: #a0a0a0;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 15%;
+    height: 100%;
+    text-align: center;
+    line-height: 42px;
+    margin: 0 1%;
+    }
+    
+    .userHistoryCheck-page .userHistoryCheck-content .userHistoryCheck-historyArea .userHistoryCheck-historyContainer .userHistoryCheck-historyContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 5%;
+    }
+    
+    .userHistoryCheck-page .userHistoryCheck-content .userHistoryCheck-historyArea .userHistoryCheck-historyContainer .userHistoryCheck-historyContent .userHistoryCheck-historyElement {
+    display: flex;
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 44px;
+    }
+    
+    .userHistoryCheck-page .userHistoryCheck-content .userHistoryCheck-historyArea .userHistoryCheck-historyContainer .userHistoryCheck-historyContent .userHistoryCheck-historyElement label {
+    display: inline-block;
+    width: 17%;
+    line-height: 42px;
+    border: 1px solid black;
+    }
+    
+    .userHistoryCheck-page .userHistoryCheck-content .userHistoryCheck-historyArea .userHistoryCheck-okBtn {
+    position: absolute;
+    width: 15%;
+    height: 8%;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 60px;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 10%;
+    background-color: #006400;
+    cursor: pointer;
+    top: 100%;
+    right: 50%;
+    transform: translate(50%, 0);
+    }
