@@ -49,7 +49,7 @@ function MemberSearch() {
           const month = String(birthDate.getMonth() + 1).padStart(2, "0");
           const date = String(birthDate.getDate()).padStart(2, "0");
 
-          setId(r.data.id);
+          setId(r.data.identification);
           setName(r.data.name);
           setPhoneNumber(r.data.phoneNumber);
           setEmail(r.data.email);
