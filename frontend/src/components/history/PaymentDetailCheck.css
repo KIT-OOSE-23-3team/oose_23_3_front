@@ -46,65 +46,6 @@
     height: 100%;
 }
 
-/* .bicycleHistoryCheck-page .bicycleHistoryCheck-content .bicycleHistoryCheck-historyArea .bicycleHistoryCheck-historyContainer .bicycleHistoryCheck-historyTitle {
-    display: flex;
-    justify-content: center;
-    margin: 5%;
-}
-
-.bicycleHistoryCheck-page .bicycleHistoryCheck-content .bicycleHistoryCheck-historyArea .bicycleHistoryCheck-historyContainer .bicycleHistoryCheck-historyTitle label {
-    display: inline-block;
-    background-color: #a0a0a0;
-    border: 1px solid black;
-    border-radius: 5px;
-    font-weight: bold;
-    width: 15%;
-    height: 100%;
-    text-align: center;
-    line-height: 42px;
-    margin: 0 1%;
-}
-
-.bicycleHistoryCheck-page .bicycleHistoryCheck-content .bicycleHistoryCheck-historyArea .bicycleHistoryCheck-historyContainer .bicycleHistoryCheck-historyContent {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 5%;
-}
-
-.bicycleHistoryCheck-page .bicycleHistoryCheck-content .bicycleHistoryCheck-historyArea .bicycleHistoryCheck-historyContainer .bicycleHistoryCheck-historyContent .bicycleHistoryCheck-historyElement {
-    display: flex;
-    font-weight: bold;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    line-height: 44px;
-}
-
-.bicycleHistoryCheck-page .bicycleHistoryCheck-content .bicycleHistoryCheck-historyArea .bicycleHistoryCheck-historyContainer .bicycleHistoryCheck-historyContent .bicycleHistoryCheck-historyElement label {
-    display: inline-block;
-    width: 17%;
-    line-height: 42px;
-    border: 1px solid black;
-}
-
-.bicycleHistoryCheck-page .bicycleHistoryCheck-content .bicycleHistoryCheck-historyArea .bicycleHistoryCheck-okBtn {
-    position: absolute;
-    width: 15%;
-    height: 8%;
-    font-size: 32px;
-    font-weight: bold;
-    line-height: 60px;
-    text-align: center;
-    color: #ffffff;
-    border-radius: 10%;
-    background-color: #006400;
-    cursor: pointer;
-    top: 100%;
-    right: 50%;
-    transform: translate(50%, 0);
-} */
-
 .paymentDetailCheck-page .paymentDetailCheck-content .paymentDetailCheck-historyArea .paymentDetailCheck-historyContainer .paymentDetailCheck-historyTitle {
     display: flex;
     justify-content: center;
