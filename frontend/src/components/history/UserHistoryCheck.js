@@ -22,7 +22,6 @@ const UserHistoryCheck = () => {
 
   const handleMemberListChange = (e) => {
     const selectedId = e.target.value;
-    console.log(e.target.value);
     getMemberUseHistory(selectedId);
     setSelectedMemberId(selectedId);
   };
