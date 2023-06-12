@@ -86,6 +86,7 @@
     width: 17%;
     line-height: 42px;
     border: 1px solid black;
+        word-wrap: break-word;
     }
     
     .paymentDetailCheck-page .paymentDetailCheck-content .paymentDetailCheck-historyArea .paymentDetailCheck-okBtn {

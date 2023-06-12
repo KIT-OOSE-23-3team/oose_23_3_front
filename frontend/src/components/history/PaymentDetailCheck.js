@@ -8,8 +8,8 @@ const PaymentDetailCheck = () => {
   const [memberList, setMemberList] = useState([]);
   const [history, setHistory] = useState([]);
 
-  const getPaymentHistory = () => {
-    axios.get(`http://localhost:8000/paymentDetailSearch`).then((r) => {
+  const getPaymentHistory = (id) => {
+    axios.get(`http://localhost:8000/paymentDetailSearch/${id}`).then((r) => {
       setHistory(r.data);
     });
   };
@@ -22,8 +22,8 @@ const PaymentDetailCheck = () => {
 
   const handleMemberListChange = (e) => {
     const selectedId = e.target.value;
-    getPaymentHistory(selectedId);
     setSelectedMemberId(selectedId);
+    getPaymentHistory(selectedId);
   };
 
   const selectedPaymentHistory = history.filter(
@@ -66,7 +66,7 @@ const PaymentDetailCheck = () => {
                   <label>{e.paymentAmount}</label>
                   <label>{new Date(e.paymentDate).toLocaleString()}</label>
                   <label>
-                    {e.rentalOffice.refundTime !== null ? new Date(e.rentalOffice.refundTime).toLocaleString() : ""}
+                    {e.refundTime !== null ? new Date(e.refundTime).toLocaleString() : ""}
                   </label>
                   <label>{e.paymentStatus}</label>
                   <label>{e.paymentMethod}</label>
