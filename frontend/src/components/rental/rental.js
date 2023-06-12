@@ -58,6 +58,10 @@ function Rental() {
         },
       rentalOffice: {
         rentalOfficeNum: office
+      },
+      returnTime: new Date(),
+      returnOffice: {
+          rentalOfficeNum: office
       }
     }
 

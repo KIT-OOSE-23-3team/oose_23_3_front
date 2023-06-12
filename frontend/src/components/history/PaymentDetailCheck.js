@@ -8,50 +8,41 @@ const PaymentDetailCheck = () => {
   const [memberList, setMemberList] = useState([]);
   const [history, setHistory] = useState([]);
 
-  const getPaymentHistory = () => {
-    axios.get(`http://localhost:8000/paymentDetailSearch`).then((r) => {
-      console.log(r.data);
+  const getPaymentHistory = (id) => {
+    axios.get(`http://localhost:8000/paymentDetailSearch/${id}`).then((r) => {
       setHistory(r.data);
     });
   };
 
   useEffect(() => {
-    getPaymentHistory();
+    axios.get("http://localhost:8000/memberFindAll").then((r) => {
+      setMemberList(r.data.filter(e => e.identification !== "admin"));
+    });
   }, []);
 
-  useEffect(() => {
-    const setList = () => {
-      const updatedList = history.map((item) => ({
-        memberNumber: item.member.memberNumber,
-        historyId: item.historyId,
-      }));
-      setMemberList(updatedList);
-    };
-    setList();
-  }, [history]);
-
   const handleMemberListChange = (e) => {
-    const selectedNumber = e.target.value;
-    setSelectedMemberId(Number(selectedNumber));
+    const selectedId = e.target.value;
+    setSelectedMemberId(selectedId);
+    getPaymentHistory(selectedId);
   };
 
-  const selectedPaymentHistory = history.find(
-    (item) => item.historyId === selectedMemberId
+  const selectedPaymentHistory = history.filter(
+    (item) => item.member.identification === selectedMemberId
   );
 
   return (
     <div className="paymentDetailCheck-page">
       <div className="paymentDetailCheck-content">
         <div className="paymentDetailCheck-bicycleArea">
-          <h1>회원 번호 목록</h1>
+          <h1>회원 목록</h1>
           <select
             className="memberList"
             multiple
             onChange={handleMemberListChange}
           >
             {memberList.map((option) => (
-              <option key={option.historyId} value={option.historyId}>
-                {option.memberNumber}
+              <option key={option.identification} value={option.identification}>
+                {option.identification}
               </option>
             ))}
           </select>
@@ -69,18 +60,18 @@ const PaymentDetailCheck = () => {
             </div>
 
             <div className="paymentDetailCheck-historyContent">
-              {selectedPaymentHistory && (
+              {selectedPaymentHistory.map((e) => (
                 <div className="paymentDetailCheck-historyElement">
-                  <label>{selectedMemberId.historyId}</label>
-                  <label>{selectedMemberId.rentalPayment}</label>
-                  <label>{selectedMemberId.paymentTime}</label>
+                  <label>{e.paymentDetailNumber}</label>
+                  <label>{e.paymentAmount}</label>
+                  <label>{new Date(e.paymentDate).toLocaleString()}</label>
                   <label>
-                    {selectedMemberId.rentalOffice.refundTime}
+                    {e.refundTime !== null ? new Date(e.refundTime).toLocaleString() : ""}
                   </label>
-                  <label>{selectedMemberId.paymentState}</label>
-                  <label>{selectedMemberId.paymentMethod}</label>
+                  <label>{e.paymentStatus}</label>
+                  <label>{e.paymentMethod}</label>
                 </div>
-              )}
+              ))}
             </div>
           </div>
           <span className="paymentDetailCheck-okBtn">확인</span>

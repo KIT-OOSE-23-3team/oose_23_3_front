@@ -8,47 +8,41 @@ const UserHistoryCheck = () => {
   const [memberList, setMemberList] = useState([]);
   const [history, setHistory] = useState([]);
 
-  const getMemberUseHistory = () => {
-    axios.get(`http://localhost:8000/historyCheck`).then((r) => {
-      console.log(r.data);
+  const getMemberUseHistory = (id) => {
+    axios.get(`http://localhost:8000/historyCheck/${id}`).then((r) => {
       setHistory(r.data);
     });
   };
 
   useEffect(() => {
-    getMemberUseHistory();
+    axios.get("http://localhost:8000/memberFindAll").then((r) => {
+      setMemberList(r.data.filter(e => e.identification !== "admin"));
+    });
   }, []);
 
-  useEffect(() => {
-    const updatedList = history.map((item) => ({
-      memberNumber: item.member.memberNumber,
-      historyId: item.historyId,
-    }));
-    setMemberList(updatedList);
-  }, [history]);
-
   const handleMemberListChange = (e) => {
-    const selectedNumber = e.target.value;
-    setSelectedMemberId(Number(selectedNumber));
+    const selectedId = e.target.value;
+    getMemberUseHistory(selectedId);
+    setSelectedMemberId(selectedId);
   };
 
-  const selectedMemberHistory = history.find(
-    (item) => item.historyId === selectedMemberId
+  const selectedMemberHistory = history.filter(
+    (item) => item.member.identification === selectedMemberId
   );
 
   return (
     <div className="userHistoryCheck-page">
       <div className="userHistoryCheck-content">
         <div className="userHistoryCheck-bicycleArea">
-          <h1>회원 번호 목록</h1>
+          <h1>회원 목록</h1>
           <select
             className="memberList"
             multiple
             onChange={handleMemberListChange}
           >
             {memberList.map((option) => (
-              <option key={option.historyId} value={option.historyId}>
-                {option.memberNumber}
+              <option key={option.identification} value={option.identification}>
+                {option.identification}
               </option>
             ))}
           </select>
@@ -66,16 +60,16 @@ const UserHistoryCheck = () => {
             </div>
 
             <div className="userHistoryCheck-historyContent">
-              {selectedMemberHistory && (
+              {selectedMemberHistory.map((e) => (
                 <div className="userHistoryCheck-historyElement">
-                  <label>{selectedMemberId.bicycle.bicycleNumber}</label>
-                  <label>{selectedMemberId.rentalOfficeName}</label>
-                  <label>{selectedMemberId.rentalTime}</label>
-                  <label>{selectedMemberId.returnTime}</label>
-                  <label>{selectedMemberId.mileage}</label>
-                  <label>{selectedMemberId.travelTime}</label>
+                  <label>{e.bicycle.bicycleNumber}</label>
+                  <label>{e.rentalOfficeName}</label>
+                  <label>{new Date(e.rentalTime).toLocaleString()}</label>
+                  <label>{e.returnTime !== null ? new Date(e.returnTime).toLocaleString() : ""}</label>
+                  <label>{e.mileage}</label>
+                  <label>{e.travelTime}</label>
                 </div>
-              )}
+              ))}
             </div>
           </div>
           <span className="userHistoryCheck-okBtn">확인</span>
