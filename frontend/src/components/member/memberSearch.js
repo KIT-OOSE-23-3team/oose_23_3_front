@@ -1,11 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useCookies } from "react-cookie";
 import "./signUp.css";
-import NavbarTopUser from "../../NavbarTopUser";
-import NavbarLeftUser from "../../NavbarLeftUser";
 import NavbarTopMember from "./nav/NavbarTopMember";
 import NavbarLeftMemberSearch from "./nav/NavbarLeftMemberSearch";
+import {useNavigate} from "react-router-dom";
 
 function MemberSearch() {
   const [id, setId] = useState("");
@@ -16,6 +14,7 @@ function MemberSearch() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const [birthDay, setBirthDay] = useState("");
+  const navigate = useNavigate();
 
   const idChange = (e) => {
     setId(e.target.value);
@@ -60,6 +59,7 @@ function MemberSearch() {
           setBirthDay(`${year}-${month}-${date}`);
         } else {
           alert("로그인이 필요한 서비스입니다");
+          navigate("/");
         }
       });
   };
