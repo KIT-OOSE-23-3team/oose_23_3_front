@@ -15,6 +15,10 @@ const NavbarTopRental = () => {
         navigate("/User/UserInfo")
     }
 
+    const handleWrongApproach = () => {
+        alert("해당 기능은 관리자만 접근할 수 있습니다.");
+    }
+
     useEffect(() => {
         axios
             .get(`http://localhost:8000/memberSearch`, { withCredentials: true })
@@ -41,9 +45,9 @@ const NavbarTopRental = () => {
       <ul className="menu-items">
         <li onClick={handleInfoClick}>회원정보</li>
         <li onClick={handleRentalClick} style={{ backgroundColor: "#1400FF", color: "white" }}>대여</li>
-        <li>이력조회</li>
-        <li>공지사항</li>
-        <li>운영소식</li>
+        <li onClick={handleWrongApproach}>이력조회</li>
+        <li onClick={handleWrongApproach}>공지사항</li>
+        <li onClick={handleWrongApproach}>운영소식</li>
       </ul>
       <div className="user-inform">
         <img
