@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./BicycleHistoryCheck.css";
 import BicycleHistoryData from "./../../dummyData/BicycleHistory.json";
 import NavbarTopRental from "./nav/NavbarTopRental";
@@ -16,10 +16,8 @@ function BicycleHistoryCheck() {
         withCredentials: true,
       })
       .then((r) => {
-        console.log(r.data);
         setHistory(r.data);
       });
-    // setHistory(BicycleHistoryData);
   };
 
   useEffect(() => {
@@ -90,7 +88,7 @@ function BicycleHistoryCheck() {
                       <label>
                         {selectedBicycleHistory.rentalOffice.rentalOfficeName}
                       </label>
-                      <label>{selectedBicycleHistory.returnOffice}</label>
+                      <label>{selectedBicycleHistory.returnOffice && selectedBicycleHistory.returnOffice.rentalOfficeName}</label>
                       <label>{selectedBicycleHistory.mileage}</label>
                     </div>
                   )}
