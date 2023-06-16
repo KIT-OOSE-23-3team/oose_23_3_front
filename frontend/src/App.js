@@ -49,6 +49,7 @@ function App() {
       <Route path="/Notice/View" element={<CustomerSupportLookuppage />} />
       <Route path="/Management/Bicycle/Submit" element={<BicycleCreate />} />
       <Route path="/Management/RentalOffice/Submit" element={<RentalOfficeCreateScreen />} />
+      <Route path="/Dummy/Payment" element={<PaymentDummyInsert/>} />
     </Routes>
   );
 }
