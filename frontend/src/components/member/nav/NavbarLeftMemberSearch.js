@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const NavbarLeftMemberSearch = () => {
   const navigate = useNavigate();
@@ -9,7 +10,7 @@ const NavbarLeftMemberSearch = () => {
   };
 
   const handleLogout = () => {
-    navigate("/");
+    axios.get("http://localhost:8000/logout", { withCredentials : true }).then(() => {navigate("/");});
   };
 
   return (
