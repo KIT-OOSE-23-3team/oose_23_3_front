@@ -14,13 +14,18 @@
 }
 
 .navbar-left li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   list-style: none;
-  cursor:pointer;
+  cursor: pointer;
   margin: 50px 0;
   border: 1px solid black;
   background-color: #81c147;
   font-weight: bold;
-  font-size:25px;
+  font-size: 25px;
   border-radius: 0.5rem;
+  width: 180px;
+  height: 70px;
 }

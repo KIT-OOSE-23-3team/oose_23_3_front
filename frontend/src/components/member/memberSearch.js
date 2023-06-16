@@ -1,7 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
-import "./signUp.css"
+import "./signUp.css";
+import NavbarTopUser from "../../NavbarTopUser";
+import NavbarLeftUser from "../../NavbarLeftUser";
+import NavbarTopMember from "./nav/NavbarTopMember";
+import NavbarLeftMemberSearch from "./nav/NavbarLeftMemberSearch";
 
 function MemberSearch() {
   const [id, setId] = useState("");
@@ -65,117 +69,107 @@ function MemberSearch() {
   }, []);
 
   return (
-    <div className="signUp-page">
-      <div className="signUp-title">
-        <h1>개인정보 수정</h1>
-      </div>
-      <div className="signUp-content">
-        <div className="signUp-input">
-          <div className="signUp-label">
-            ID
+    <div className="App">
+      <NavbarTopMember />
+      <div className="main-content">
+        <NavbarLeftMemberSearch/>
+        <div className="signUp-page">
+          <div className="signUp-title">
+            <h1>개인정보 수정</h1>
           </div>
-          <input
-            type="text"
-            value={id}
-            id="id"
-            name="id"
-            placeholder="id"
-            required
-            onChange={idChange}
-          />
-          <div className="signUp-label">
-            이름
+          <div className="signUp-content">
+            <div className="signUp-input">
+              <div className="signUp-label">ID</div>
+              <input
+                type="text"
+                value={id}
+                id="id"
+                name="id"
+                placeholder="id"
+                required
+                onChange={idChange}
+              />
+              <div className="signUp-label">이름</div>
+              <input
+                type="text"
+                value={name}
+                id="name"
+                name="name"
+                placeholder="name"
+                required
+                onChange={nameChange}
+              />
+            </div>
+            <div className="signUp-input">
+              <div className="signUp-label">비밀번호</div>
+              <input
+                type="password"
+                value={pw}
+                id="pw"
+                name="pw"
+                placeholder="pw"
+                required
+                onChange={pwChange}
+              />
+              <div className="signUp-label">전화번호</div>
+              <input
+                type="text"
+                value={phoneNumber}
+                id="phone_number"
+                name="phone_number"
+                placeholder="phone_number"
+                required
+                onChange={phoneNumberChange}
+              />
+            </div>
+            <div className="signUp-input">
+              <div className="signUp-label">비밀번호확인</div>
+              <input
+                type="password"
+                value={pw_confirm}
+                id="pw_confirm"
+                name="pw_confirm"
+                placeholder="pw_confirm"
+                required
+                onChange={pwConfirmChange}
+              />
+              <div className="signUp-label">이메일</div>
+              <input
+                type="email"
+                value={email}
+                id="email"
+                name="email"
+                placeholder="email"
+                required
+                onChange={emailChange}
+              />
+            </div>
+            <div className="signUp-input">
+              <div className="signUp-label">대여비밀번호</div>
+              <input
+                type="password"
+                value={pw_rental}
+                id="pw_rental"
+                name="pw_rental"
+                placeholder="pw_rental"
+                required
+                onChange={pwRentalChange}
+              />
+              <div className="signUp-label">생일</div>
+              <input
+                type="date"
+                value={birthDay}
+                id="birthday"
+                name="birthday"
+                placeholder="birthday"
+                required
+                onChange={birthDayChange}
+              />
+            </div>
+            <div className="signUp-btn">수정</div>
           </div>
-          <input
-            type="text"
-            value={name}
-            id="name"
-            name="name"
-            placeholder="name"
-            required
-            onChange={nameChange}
-          />
         </div>
-      <div className="signUp-input">
-          <div className="signUp-label">
-            비밀번호
-          </div>
-          <input
-            type="password"
-            value={pw}
-            id="pw"
-            name="pw"
-            placeholder="pw"
-            required
-            onChange={pwChange}
-          />
-          <div className="signUp-label">
-            전화번호
-          </div>
-          <input
-            type="text"
-            value={phoneNumber}
-            id="phone_number"
-            name="phone_number"
-            placeholder="phone_number"
-            required
-            onChange={phoneNumberChange}
-          />
       </div>
-      <div className="signUp-input">
-          <div className="signUp-label">
-            비밀번호확인
-          </div>
-          <input
-            type="password"
-            value={pw_confirm}
-            id="pw_confirm"
-            name="pw_confirm"
-            placeholder="pw_confirm"
-            required
-            onChange={pwConfirmChange}
-          />
-          <div className="signUp-label">
-            이메일
-          </div>
-          <input
-            type="email"
-            value={email}
-            id="email"
-            name="email"
-            placeholder="email"
-            required
-            onChange={emailChange}
-          />
-      </div>
-      <div className="signUp-input">
-          <div className="signUp-label">
-            대여비밀번호
-          </div>
-          <input
-            type="password"
-            value={pw_rental}
-            id="pw_rental"
-            name="pw_rental"
-            placeholder="pw_rental"
-            required
-            onChange={pwRentalChange}
-          />
-          <div className="signUp-label">
-            생일
-          </div>
-          <input
-            type="date"
-            value={birthDay}
-            id="birthday"
-            name="birthday"
-            placeholder="birthday"
-            required
-            onChange={birthDayChange}
-          />
-      </div>
-        <div className="signUp-btn">수정</div>
-    </div>
     </div>
   );
 }
