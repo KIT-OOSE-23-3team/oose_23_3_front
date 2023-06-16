@@ -45,7 +45,7 @@ function Rental() {
 
   const rental = () => {
     axios.get(`http://localhost:8000/bicycleRental/${bicycleNum}`, { withCredentials: true }).then((r) => {
-      console.log(r);
+      alert("대여 성공!");
 
       if (!r) {
         alert("대여가 정상적으로 되지 않았습니다!");
