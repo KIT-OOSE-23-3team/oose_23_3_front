@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const NavbarTopRental = () => {
+    const [name, setName] = useState("");
     const navigate = useNavigate();
 
 
@@ -12,6 +14,19 @@ const NavbarTopRental = () => {
     const handleInfoClick = () => {
         navigate("/User/UserInfo")
     }
+
+    useEffect(() => {
+        axios
+            .get(`http://localhost:8000/memberSearch`, { withCredentials: true })
+            .then((r) => {
+                if (r.data !== "") {
+                    setName(r.data.name);
+                } else {
+                    alert("로그인이 필요한 서비스입니다");
+                    navigate("/");
+                }
+            })
+    }, [])
 
   return (
     <div className="navbar-top">
@@ -36,7 +51,7 @@ const NavbarTopRental = () => {
           alt="profile"
           className="user-profile"
         />
-        <div className="profile-name">홍길동</div>
+        <div className="profile-name">{name}</div>
       </div>
     </div>
   );
