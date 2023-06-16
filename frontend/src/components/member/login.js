@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import {Navigate, useNavigate} from "react-router-dom";
 
 function Login() {
   const [id, setId] = useState("");
@@ -24,7 +24,16 @@ function Login() {
       password: pw
     }
 
-    axios.post("http://localhost:8000/login", login, { withCredentials : true } ).then();
+    axios.post("http://localhost:8000/login", login, { withCredentials : true } ).then((res) => {
+        console.log(res.data);
+        if (res.data === "member") {
+            navigate("/User/UserInfo");
+        } else if (res.data === "admin") {
+            navigate("/History/PaymentHistory");
+        } else {
+            navigate("/");
+        }
+    });
   };
 
   const logout = () => {
