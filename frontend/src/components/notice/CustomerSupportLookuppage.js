@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import "./CustomerSupportLookuppage.css"
+import NavbarTopNotice from './nav/NavbarTopNotice';
+import NavbarLeftNoticeView from './nav/NavbarLeftNoticeView';
 
 const CustomerSupportLookuppage = () => {
   const [notices, setNotices] = useState([]);
@@ -24,6 +26,10 @@ const CustomerSupportLookuppage = () => {
   };
 
   return (
+    <div className="App">
+      <NavbarTopNotice />
+      <div className="main-content">
+        <NavbarLeftNoticeView />
     <div className="noticeSearch-page">
       <div className="noticeSearch-content">
         <div className="noticeSearch-listArea">
@@ -65,6 +71,8 @@ const CustomerSupportLookuppage = () => {
           </div>
         </div>
       </div>
+    </div>
+    </div>
     </div>
   );
 };

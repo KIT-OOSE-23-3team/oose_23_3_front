@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
 import "./signUp.css"
+import NavbarSignUpTop from "../../NavbarSignUpTop";
+import { useNavigate } from "react-router-dom";
 
 function SignUp() {
   const [id, setId] = useState("");
@@ -11,6 +13,8 @@ function SignUp() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const [birthDay, setBirthDay] = useState("");
+
+  const navigate = useNavigate();
 
   const idChange = (e) => {
     setId(e.target.value);
@@ -57,6 +61,8 @@ function SignUp() {
     axios.post("http://localhost:8000/memberReg", member).then((r) => {
       console.log(r);
     });
+
+    navigate("/");
   };
 
   const memberSearch = () => {
@@ -76,6 +82,8 @@ function SignUp() {
   };
 
   return (
+    <div className="App">
+      <NavbarSignUpTop />
     <div className="signUp-page">
       <div className="signUp-title">
         <h1>회원가입</h1>
@@ -186,6 +194,7 @@ function SignUp() {
           />
       </div>
         <div className="signUp-btn" onClick={submit}>등록</div>
+    </div>
     </div>
     </div>
   );

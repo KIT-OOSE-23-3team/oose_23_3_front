@@ -2,6 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "./rental.css"
 import MapAPI from "./mapAPI";
+import NavbarTopRental from "./nav/NavbarTopRental";
+import NavbarLeftRental from "./nav/NavbarLeftRental";
 
 function Rental() {
   const [bicycleNum, setBicycleNum] = useState();
@@ -69,6 +71,10 @@ function Rental() {
   }
 
   return (
+    <div className="App">
+      <NavbarTopRental />
+      <div className="main-content">
+      <NavbarLeftRental />
     <div className="rental-page">
       <h1>자전거 대여</h1>
       <div className="rental-content">
@@ -112,6 +118,8 @@ function Rental() {
       <span onClick={rental}>대여</span>
       </div>
       <input type="submit" value="더미 이용내역 삽입" onClick={dummyInsert}></input>
+    </div>
+    </div>
     </div>
   );
 }

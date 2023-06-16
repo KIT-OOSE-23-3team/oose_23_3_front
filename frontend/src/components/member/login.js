@@ -1,10 +1,15 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [id, setId] = useState("");
   const [pw, setPw] = useState("");
+  const navigate = useNavigate();
 
+  const handleUserSignUp = () => {
+    navigate("/SignUp");
+  }
 
   const idChange = (e) => {
     setId(e.target.value);
@@ -48,6 +53,7 @@ function Login() {
       ></input>
       <input type="submit" value="로그인" onClick={login}></input>
       <input type="submit" value="로그아웃" onClick={logout}></input>
+      <div onClick={handleUserSignUp}>회원가입</div>
     </div>
   );
 }
