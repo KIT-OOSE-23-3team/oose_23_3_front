@@ -30,8 +30,12 @@ function RentalOfficeCreateScreen() {
 
     axios
       .post("http://localhost:8000/rentalOfficeInsert", rentalOffice)
-      .then((r) => {
-        console.log(r);
+      .then((res) => {
+        if (res.data === "success") {
+          alert("대여소가 성공적으로 등록되었습니다.");
+        } else if (res.data === "id") {
+          alert("해당 대여소 ID는 이미 존재합니다.");
+        }
       });
   };
 

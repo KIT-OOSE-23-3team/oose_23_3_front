@@ -34,61 +34,43 @@
     height: 100%;
 }
 
-.bicycleHistoryCheck-page .bicycleHistoryCheck-content .bicycleHistoryCheck-historyArea .bicycleHistoryCheck-historyContainer {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 85%;
-    background-color: #dcdcdc;
-}
-
-.bicycleHistoryCheck-page .bicycleHistoryCheck-content .bicycleHistoryCheck-historyArea .bicycleHistoryCheck-historyContainer .bicycleHistoryCheck-history {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-}
-
-.bicycleHistoryCheck-page .bicycleHistoryCheck-content .bicycleHistoryCheck-historyArea .bicycleHistoryCheck-historyContainer .bicycleHistoryCheck-historyTitle {
-    display: flex;
-    justify-content: center;
-    margin: 5%;
-}
-
-.bicycleHistoryCheck-page .bicycleHistoryCheck-content .bicycleHistoryCheck-historyArea .bicycleHistoryCheck-historyContainer .bicycleHistoryCheck-historyTitle label {
-    display: inline-block;
-    background-color: #a0a0a0;
-    border: 1px solid black;
-    border-radius: 5px;
-    font-weight: bold;
-    width: 15%;
-    height: 100%;
-    text-align: center;
-    line-height: 42px;
-    margin: 0 1%;
-}
-
 .bicycleHistoryCheck-page .bicycleHistoryCheck-content .bicycleHistoryCheck-historyArea .bicycleHistoryCheck-historyContainer .bicycleHistoryCheck-historyContent {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 5%;
+    margin: 10%;
 }
 
 .bicycleHistoryCheck-page .bicycleHistoryCheck-content .bicycleHistoryCheck-historyArea .bicycleHistoryCheck-historyContainer .bicycleHistoryCheck-historyContent .bicycleHistoryCheck-historyElement {
-    display: flex;
     font-weight: bold;
     width: 100%;
     height: 100%;
-    text-align: center;
     line-height: 44px;
 }
 
-.bicycleHistoryCheck-page .bicycleHistoryCheck-content .bicycleHistoryCheck-historyArea .bicycleHistoryCheck-historyContainer .bicycleHistoryCheck-historyContent .bicycleHistoryCheck-historyElement label {
+.bicycleHistoryCheck-page .bicycleHistoryCheck-content .bicycleHistoryCheck-historyArea .bicycleHistoryCheck-historyContainer .bicycleHistoryCheck-historyContent .bicycleHistoryCheck-historyElement .bicycleHistoryCheck-line {
+    margin-bottom: 10%;
+}
+
+.bicycleHistoryCheck-page .bicycleHistoryCheck-content .bicycleHistoryCheck-historyArea .bicycleHistoryCheck-historyContainer .bicycleHistoryCheck-historyContent .bicycleHistoryCheck-historyElement .bicycleHistoryCheck-line .bicycleHistoryCheck-label {
     display: inline-block;
-    width: 17%;
-    line-height: 42px;
-    border: 1px solid black;
+    width: 15%;
+    height: 60%;
+    line-height: 45px;
+    border-radius: 10%;
+    font-weight: bold;
+    text-align: center;
+    background-color: #dddddd;
+    margin-right: 10%;
+}
+
+.bicycleHistoryCheck-page .bicycleHistoryCheck-content .bicycleHistoryCheck-historyArea .bicycleHistoryCheck-historyContainer .bicycleHistoryCheck-historyContent .bicycleHistoryCheck-historyElement .bicycleHistoryCheck-line label {
+    display: inline-block;
+    width: 15%;
+    margin-right: 10%;
+    text-align: center;
+}
+
+.bicycleHistoryCheck-page .bicycleHistoryCheck-content .bicycleHistoryCheck-historyArea .bicycleHistoryCheck-historyContainer .bicycleHistoryCheck-historyContent .bicycleHistoryCheck-historyElement .bicycleHistoryCheck-line:nth-child(2n) label {
+    width: 75%;
+    margin-right: 0;
 }
 
 .bicycleHistoryCheck-page .bicycleHistoryCheck-content .bicycleHistoryCheck-historyArea .bicycleHistoryCheck-okBtn {
@@ -103,7 +85,7 @@
     border-radius: 10%;
     background-color: #006400;
     cursor: pointer;
-    top: 100%;
+    top: 80%;
     right: 50%;
     transform: translate(50%, 0);
 }

@@ -30,12 +30,16 @@ function BicycleCreate() {
       rentalOffice: {
         rentalOfficeNum: rentalOfficeNum,
       },
-      //TODO 대여소 번호를 같이 넘겨줘야함.
-      //대여소 번호를 같이 넘겨 줘야 한다는 게 이렇게 하라는 게 맞을까요...?
     };
 
-    axios.post("http://localhost:8000/bicycleInsert", bicycle).then((r) => {
-      console.log(r);
+    axios.post("http://localhost:8000/bicycleInsert", bicycle).then((res) => {
+      if (res.data === "success") {
+        alert("자전거가 성공적으로 등록되었습니다.");
+      } else if (res.data === "id") {
+        alert("해당 자전거 ID는 이미 존재합니다.");
+      } else if (res.data === "over") {
+        alert("해당 대여소가 수용할 수 있는 자전거 수를 넘어섭니다.");
+      }
     });
   };
   const handleSubmit = () => {

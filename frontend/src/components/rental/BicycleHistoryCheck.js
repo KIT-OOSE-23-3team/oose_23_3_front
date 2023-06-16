@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./BicycleHistoryCheck.css";
 import BicycleHistoryData from "./../../dummyData/BicycleHistory.json";
 import NavbarTopRental from "./nav/NavbarTopRental";
@@ -16,10 +16,8 @@ function BicycleHistoryCheck() {
         withCredentials: true,
       })
       .then((r) => {
-        console.log(r.data);
         setHistory(r.data);
       });
-    // setHistory(BicycleHistoryData);
   };
 
   useEffect(() => {
@@ -68,30 +66,55 @@ function BicycleHistoryCheck() {
               </select>
             </div>
             <div className="bicycleHistoryCheck-historyArea">
-              <h1>자전거 이용내역 조회</h1>
               <div className="bicycleHistoryCheck-historyContainer">
-                <div className="bicycleHistoryCheck-historyTitle">
-                  <label>자전거 번호</label>
-                  <label>결제 금액</label>
-                  <label>이용 시간</label>
-                  <label>대여소</label>
-                  <label>반납 대여소</label>
-                  <label>주행거리</label>
-                </div>
-
                 <div className="bicycleHistoryCheck-historyContent">
                   {selectedBicycleHistory && (
                     <div className="bicycleHistoryCheck-historyElement">
-                      <label>
-                        {selectedBicycleHistory.bicycle.bicycleNumber}
-                      </label>
-                      <label>{selectedBicycleHistory.rentalPayment}</label>
-                      <label>{selectedBicycleHistory.rentalTime}</label>
-                      <label>
-                        {selectedBicycleHistory.rentalOffice.rentalOfficeName}
-                      </label>
-                      <label>{selectedBicycleHistory.returnOffice}</label>
-                      <label>{selectedBicycleHistory.mileage}</label>
+                      <div className="bicycleHistoryCheck-line">
+                        <div className="bicycleHistoryCheck-label">
+                          자전거 번호
+                        </div>
+                        <label>
+                          {selectedBicycleHistory.bicycle.bicycleNumber}
+                        </label>
+
+                        <div className="bicycleHistoryCheck-label">
+                          결제 금액
+                        </div>
+                        <label>
+                          {selectedBicycleHistory.rentalPayment}
+                        </label>
+                      </div>
+
+                      <div className="bicycleHistoryCheck-line">
+                        <div className="bicycleHistoryCheck-label">
+                          이용 시간
+                        </div>
+                        <label>{selectedBicycleHistory.rentalTime}</label>
+                      </div>
+
+                      <div className="bicycleHistoryCheck-line">
+                        <div className="bicycleHistoryCheck-label">
+                          대여소
+                        </div>
+                        <label>
+                          {selectedBicycleHistory.rentalOffice.rentalOfficeName}
+                        </label>
+
+                        <div className="bicycleHistoryCheck-label">
+                          반납 대여소
+                        </div>
+                        <label>
+                          {selectedBicycleHistory.returnOffice && selectedBicycleHistory.returnOffice.rentalOfficeName}
+                        </label>
+                      </div>
+
+                      <div className="bicycleHistoryCheck-line">
+                        <div className="bicycleHistoryCheck-label">
+                          주행거리
+                        </div>
+                        <label>{selectedBicycleHistory.mileage}</label>
+                      </div>
                     </div>
                   )}
                 </div>

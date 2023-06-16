@@ -17,25 +17,12 @@ import BicycleHistoryCheck from "./components/rental/BicycleHistoryCheck";
 import CustomerSupportLookuppage from "./components/notice/CustomerSupportLookuppage";
 import ManagerSupportFormpage from "./components/notice/ManagerSupportFormpage";
 import DateHistoryCheck from "./components/history/DateHistoryCheck";
-// import HistoryBoundary from "./components/history/HistoryBoundary";
 import PaymentDetailCheck from "./components/history/PaymentDetailCheck";
-// import UserCheck from "./components/history/UserCheck";
 import UserHistoryCheck from "./components/history/UserHistoryCheck";
-import NavbarSignUpTop from "./NavbarSignUpTop";
 import PaymentDummyInsert from './components/dummyInsert/PaymentDummyInsert';
 
 function App() {
   return (
-    // // <div className="App">
-    // //   <NavbarTop />
-    // {/* //   <div className="main-content">
-    // //     <NavbarLeft /> */}
-    // //       {/* <CustomerSupportLookuppage/> */}
-    // {/* //       <PaymentDummyInsert /> */}
-    // // <SignUp />
-    // //   </div>
-    // // </div>
-    // <Rental />
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/SignUp" element={<SignUp />} />
@@ -49,6 +36,7 @@ function App() {
       <Route path="/Notice/View" element={<CustomerSupportLookuppage />} />
       <Route path="/Management/Bicycle/Submit" element={<BicycleCreate />} />
       <Route path="/Management/RentalOffice/Submit" element={<RentalOfficeCreateScreen />} />
+      <Route path="/Dummy/Payment" element={<PaymentDummyInsert/>} />
     </Routes>
   );
 }
