@@ -42,44 +42,35 @@ function SignUp() {
   };
 
   const submit = () => {
-    const birthDayArray = birthDay.split("-");
-    const date = new Date(
-      +birthDayArray[0],
-      +birthDayArray[1] - 1,
-      +birthDayArray[2] + 1
-    );
-    const member = {
-      identification: id,
-      password: pw,
-      rentalPassword: pw_rental,
-      name: name,
-      phoneNumber: phoneNumber,
-      email: email,
-      birthDate: date,
-    };
+      if (pw === pw_confirm) {
+          const birthDayArray = birthDay.split("-");
+          const date = new Date(
+              +birthDayArray[0],
+              +birthDayArray[1] - 1,
+              +birthDayArray[2] + 1
+          );
+          const member = {
+              identification: id,
+              password: pw,
+              rentalPassword: pw_rental,
+              name: name,
+              phoneNumber: phoneNumber,
+              email: email,
+              birthDate: date,
+          };
 
-    axios.post("http://localhost:8000/memberReg", member).then((r) => {
-      console.log(r);
-    });
-
-    navigate("/");
-  };
-
-  const memberSearch = () => {
-    axios.get(`http://localhost:8000/memberRead/${id}`).then((r) => {
-      console.log(r);
-    });
-  };
-
-  const idVerification = () => {
-    console.log(id);
-    axios.get(`http://localhost:8000/idVerification/${id}`).then((r) => {
-      console.log(r);
-      if (r.data === true) {
-        document.getElementById("id").disabled = true;
+          axios.post("http://localhost:8000/memberReg", member).then((res) => {
+              if (res.data === "success") {
+                  navigate("/");
+              } else {
+                  alert("이미 존재하는 아이디입니다.");
+              }
+          });
+      } else {
+          alert("비밀번호가 일치하지 않습니다.");
       }
-    });
   };
+
 
   return (
     <div className="App">
