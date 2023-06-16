@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const NavbarTopNotice = () => {
     const navigate = useNavigate();
@@ -22,7 +23,7 @@ const NavbarTopNotice = () => {
 
 
     const logout = () => {
-        navigate("/");
+        axios.get("http://localhost:8000/logout", { withCredentials : true }).then(() => {navigate("/");});
       }
 
   return (
