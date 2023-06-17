@@ -44,6 +44,11 @@ function Rental() {
   }, [office]);
 
   const rental = () => {
+
+    if(bicycleNum == undefined) {
+      return(alert("필수 항목이 누락되었습니다."));
+    }
+
     axios.get(`http://localhost:8000/bicycleRental/${bicycleNum}`, { withCredentials: true }).then((r) => {
       alert("대여 성공!");
 
