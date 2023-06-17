@@ -14,7 +14,6 @@ function RentalHistoryDummyInsert() {
   const [bicycleNum, setBicycleNum] = useState("");
   const [rentalOffice, setRentalOffice] = useState("");
   const [returnOffice, setReturnOffice] = useState("");
-  const [returnTime, setReturnTime] = useState("");
 
   const handleMileageChange = (e) => {
     setMileage(e.target.value);
@@ -44,10 +43,6 @@ function RentalHistoryDummyInsert() {
     setReturnOffice(e.target.value);
   };
 
-  const handleReturnTimeChange = (e) => {
-    setReturnTime(e.target.value);
-  };
-
   const handleSubmit = () => {
     let paymentMethod;
 
@@ -61,22 +56,21 @@ function RentalHistoryDummyInsert() {
 
     axios
       .post(
-        "http://localhost:8000/paymentDetailInsert",
+        "http://localhost:8000/historyCheckInsert",
         {
           bicycle: {
             bicycleNumber: bicycleNum,
           },
           mileage: mileage,
-          paymentMethod: payMethod,
+          paymentMethod: paymentMethod,
           rentalPayment: price,
           travelTime: useTime,
           rentalOffice: {
             rentalOfficeNum: rentalOffice,
           },
           returnOffice: {
-            returnOfficeNum: returnOffice,
+              rentalOfficeNum: returnOffice,
           },
-          returnTime: returnTime,
         },
         { withCredentials: true }
       )
@@ -130,12 +124,6 @@ function RentalHistoryDummyInsert() {
         placeholder="반환 대여소"
         value={returnOffice}
         onChange={handleReturnOfficeChange}
-      />
-      <input
-        type="text"
-        placeholder="반환 시간"
-        value={returnTime}
-        onChange={handleReturnTimeChange}
       />
 
       <input type="button" onClick={handleSubmit} value="전송" />
