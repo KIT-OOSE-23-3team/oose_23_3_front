@@ -58,23 +58,6 @@ function Rental() {
     });
   };
 
-  const dummyInsert = () => {
-    const historyCheck = {
-        bicycle: {
-          bicycleNumber: bicycleNum
-        },
-      rentalOffice: {
-        rentalOfficeNum: office
-      },
-      returnTime: new Date(),
-      returnOffice: {
-          rentalOfficeNum: office
-      }
-    }
-
-    axios.post("http://localhost:8000/historyCheckDummy", historyCheck, {withCredentials: true}).then();
-  }
-
   return (
     <div className="App">
       <NavbarTopRental />
@@ -122,7 +105,6 @@ function Rental() {
       <div className="rental-btnArea">
       <span onClick={rental}>대여</span>
       </div>
-      <input type="submit" value="더미 이용내역 삽입" onClick={dummyInsert}></input>
     </div>
     </div>
     </div>

@@ -11,12 +11,15 @@ const DateHistoryCheck = () => {
   const [history, setHistory] = useState([]);
 
   const getDateHistory = () => {
-    axios
-      .get(`http://localhost:8000/historyCheck/${startDate}/${endDate}`)
-      .then((r) => {
-        console.log(r.data);
-        setHistory(r.data);
-      });
+    if (startDate === "" || endDate === "") {
+      alert("시작일과 종료일을 모두 설정해주세요!")
+    } else {
+      axios
+          .get(`http://localhost:8000/historyCheck/${startDate}/${endDate}`)
+          .then((r) => {
+            setHistory(r.data);
+          });
+    }
   };
 
   const handleSearch = (e) => {

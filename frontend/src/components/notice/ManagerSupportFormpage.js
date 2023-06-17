@@ -25,33 +25,34 @@ const ManagerSupportFormpage = () => {
   };
 
   const handleRegistration = () => {
-    if (title === "" || text === "") {
-      alert("제목과 내용은 반드시 입력해야합니다.");
-      return;
+    if (title === "") {
+      alert("제목을 입력해주세요");
+    } else if (text === "") {
+      alert("내용을 입력해주세요");
+    } else {
+      const notice = {
+        title: title,
+        text: text,
+      };
+
+      axios
+          .post("http://localhost:8000/postNotice", notice, {
+            withCredentials: true,
+          })
+          .then((response) => {
+            console.log(response.data);
+
+            if (response.data === "등록함") {
+              setTitle("");
+              setText("");
+            } else {
+              alert("관리자만이 공지사항을 등록할 수 있습니다.");
+            }
+          })
+          .catch((error) => {
+            console.error(error);
+          });
     }
-
-    const notice = {
-      title: title,
-      text: text,
-    };
-
-    axios
-      .post("http://localhost:8000/postNotice", notice, {
-        withCredentials: true,
-      })
-      .then((response) => {
-        console.log(response.data);
-
-        if (response.data === "등록함") {
-          setTitle("");
-          setText("");
-        } else {
-          alert("관리자만이 공지사항을 등록할 수 있습니다.");
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
   };
 
   return (

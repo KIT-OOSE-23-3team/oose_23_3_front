@@ -33,12 +33,15 @@ function BicycleCreate() {
     };
 
     axios.post("http://localhost:8000/bicycleInsert", bicycle).then((res) => {
+      console.log(res.data);
       if (res.data === "success") {
         alert("자전거가 성공적으로 등록되었습니다.");
       } else if (res.data === "id") {
         alert("해당 자전거 ID는 이미 존재합니다.");
       } else if (res.data === "over") {
         alert("해당 대여소가 수용할 수 있는 자전거 수를 넘어섭니다.");
+      } else if (res.data === "rentalOfficeNull") {
+        alert("해당 대여소가 없습니다.");
       }
     });
   };
