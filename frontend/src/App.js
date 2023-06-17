@@ -20,6 +20,7 @@ import DateHistoryCheck from "./components/history/DateHistoryCheck";
 import PaymentDetailCheck from "./components/history/PaymentDetailCheck";
 import UserHistoryCheck from "./components/history/UserHistoryCheck";
 import PaymentDummyInsert from './components/dummyInsert/PaymentDummyInsert';
+import RentalHistoryDummyInsert from './components/dummyInsert/RentalHistoryDummyInsert';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
       <Route path="/Management/Bicycle/Submit" element={<BicycleCreate />} />
       <Route path="/Management/RentalOffice/Submit" element={<RentalOfficeCreateScreen />} />
       <Route path="/Dummy/Payment" element={<PaymentDummyInsert/>} />
+      <Route path="/Dummy/History" element={<RentalHistoryDummyInsert />} />
     </Routes>
   );
 }
