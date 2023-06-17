@@ -72,7 +72,7 @@ const UserHistoryCheck = () => {
                   {selectedMemberHistory.map((e) => (
                     <div className="userHistoryCheck-historyElement">
                       <label>{e.bicycle.bicycleNumber}</label>
-                      <label>{e.rentalOfficeName}</label>
+                      <label>{e.rentalOffice.rentalOfficeName}</label>
                       <label>{new Date(e.rentalTime).toLocaleString()}</label>
                       <label>
                         {e.returnTime !== null
