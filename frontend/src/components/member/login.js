@@ -24,7 +24,7 @@ function Login() {
       password: pw
     }
 
-    axios.post("http://localhost:8000/login", login, { withCredentials : true } ).then((res) => {
+    axios.post("https://119.56.139.127:5050/login", login, { withCredentials : true } ).then((res) => {
         console.log(res.data);
         if (res.data === "member") {
             navigate("/User/UserInfo");
@@ -37,7 +37,7 @@ function Login() {
   };
 
   const logout = () => {
-    axios.get("http://localhost:8000/logout", { withCredentials : true }).then();
+    axios.get("https://119.56.139.127:5050/logout", { withCredentials : true }).then();
   }
 
   return (

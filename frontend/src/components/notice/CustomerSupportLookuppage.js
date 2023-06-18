@@ -12,7 +12,7 @@ const CustomerSupportLookuppage = () => {
   });
 
   useEffect(() => {
-    axios.get("http://localhost:8000/noticeFindAll").then((r) => {
+    axios.get("https://119.56.139.127:5050/noticeFindAll").then((r) => {
       setNotices(r.data);
     })
   }, []);

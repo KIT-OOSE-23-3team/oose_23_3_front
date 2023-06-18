@@ -59,7 +59,7 @@ function SignUp() {
               birthDate: date,
           };
 
-          axios.post("http://localhost:8000/memberReg", member).then((res) => {
+          axios.post("https://119.56.139.127:5050/memberReg", member).then((res) => {
               if (res.data === "success") {
                   navigate("/");
               } else {
