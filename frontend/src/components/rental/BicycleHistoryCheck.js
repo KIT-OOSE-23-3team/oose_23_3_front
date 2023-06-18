@@ -12,7 +12,7 @@ function BicycleHistoryCheck() {
 
   const getBicycleHistory = () => {
     axios
-      .get(`http://localhost:8000/bicycleHistoryCheck`, {
+      .get(`http://119.56.139.127:5050/bicycleHistoryCheck`, {
         withCredentials: true,
       })
       .then((r) => {
@@ -90,7 +90,7 @@ function BicycleHistoryCheck() {
                         <div className="bicycleHistoryCheck-label">
                           이용 시간
                         </div>
-                        <label>{selectedBicycleHistory.rentalTime}</label>
+                        <label>{`${selectedBicycleHistory.rentalTime} ~ ${selectedBicycleHistory.returnTime}`}</label>
                       </div>
 
                       <div className="bicycleHistoryCheck-line">

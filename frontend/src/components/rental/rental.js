@@ -12,7 +12,7 @@ function Rental() {
   const [officeOptions, setOfficeOptions] = useState([]);
 
   const init = () => {
-    axios.get("http://localhost:8000/rentalOfficeFindAll").then((r) => {
+    axios.get("http://119.56.139.127:5050/rentalOfficeFindAll").then((r) => {
       setOfficeOptions(r.data);
 
       if (r.data.length) {
@@ -23,7 +23,7 @@ function Rental() {
   };
 
   const getBicycle = (office) => {
-    axios.get(`http://localhost:8000/bicycleSearch/${office}`).then((r) => {
+    axios.get(`http://119.56.139.127:5050/bicycleSearch/${office}`).then((r) => {
       setBicycleOptions(r.data);
       if (r.data.length) {
         setBicycleNum(r.data[0].bicycleNumber);
@@ -49,7 +49,7 @@ function Rental() {
       return(alert("필수 항목이 누락되었습니다."));
     }
 
-    axios.get(`http://localhost:8000/bicycleRental/${bicycleNum}`, { withCredentials: true }).then((r) => {
+    axios.get(`http://119.56.139.127:5050/bicycleRental/${bicycleNum}`, { withCredentials: true }).then((r) => {
       alert("대여 성공!");
 
       if (!r) {

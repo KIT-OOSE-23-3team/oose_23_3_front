@@ -32,7 +32,7 @@ function BicycleCreate() {
       },
     };
 
-    axios.post("http://localhost:8000/bicycleInsert", bicycle).then((res) => {
+    axios.post("http://119.56.139.127:5050/bicycleInsert", bicycle).then((res) => {
       console.log(res.data);
       if (res.data === "success") {
         alert("자전거가 성공적으로 등록되었습니다.");

@@ -15,7 +15,7 @@ const DateHistoryCheck = () => {
       alert("시작일과 종료일을 모두 설정해주세요!")
     } else {
       axios
-          .get(`http://localhost:8000/historyCheck/${startDate}/${endDate}`)
+          .get(`http://119.56.139.127:5050/historyCheck/${startDate}/${endDate}`)
           .then((r) => {
             setHistory(r.data);
           });

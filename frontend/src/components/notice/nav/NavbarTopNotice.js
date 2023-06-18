@@ -23,7 +23,7 @@ const NavbarTopNotice = () => {
 
 
     const logout = () => {
-        axios.get("http://localhost:8000/logout", { withCredentials : true }).then(() => {navigate("/");});
+        axios.get("http://119.56.139.127:5050/logout", { withCredentials : true }).then(() => {navigate("/");});
       }
 
   return (

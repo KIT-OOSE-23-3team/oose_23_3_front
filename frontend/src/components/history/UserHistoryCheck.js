@@ -11,13 +11,13 @@ const UserHistoryCheck = () => {
   const [history, setHistory] = useState([]);
 
   const getMemberUseHistory = (id) => {
-    axios.get(`http://localhost:8000/historyCheck/${id}`).then((r) => {
+    axios.get(`http://119.56.139.127:5050/historyCheck/${id}`).then((r) => {
       setHistory(r.data);
     });
   };
 
   useEffect(() => {
-    axios.get("http://localhost:8000/memberFindAll").then((r) => {
+    axios.get("http://119.56.139.127:5050/memberFindAll").then((r) => {
       setMemberList(r.data.filter((e) => e.identification !== "admin"));
     });
   }, []);
