@@ -10,7 +10,7 @@ const NavbarLeftMemberSearch = () => {
   };
 
   const handleLogout = () => {
-    axios.get("http://localhost:8000/logout", { withCredentials : true }).then(() => {navigate("/");});
+    axios.get("https://119.56.139.127:5050/logout", { withCredentials : true }).then(() => {navigate("/");});
   };
 
   return (

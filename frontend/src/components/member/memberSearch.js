@@ -43,7 +43,7 @@ function MemberSearch() {
 
   const memberSearch = () => {
     axios
-      .get(`http://localhost:8000/memberSearch`, { withCredentials: true })
+      .get(`https://119.56.139.127:5050/memberSearch`, { withCredentials: true })
       .then((r) => {
         if (r.data !== "") {
           //r.data가 "" -> 서버로부터 보낸 응답이 없음 -> 세션이 없음 -> 로그인하지 않은 상태

@@ -41,7 +41,7 @@ function PaymentDummyInsert() {
       }
 
       axios
-      .post("http://localhost:8000/paymentDetailInsert", {
+      .post("https://119.56.139.127:5050/paymentDetailInsert", {
           bicycle: {
               bicycleNumber: 1
           },
