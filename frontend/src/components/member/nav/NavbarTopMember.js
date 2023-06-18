@@ -21,7 +21,7 @@ const NavbarTopMember = () => {
 
     useEffect(() => {
         axios
-            .get(`https://119.56.139.127:5050/memberSearch`, { withCredentials: true })
+            .get(`http://119.56.139.127:5050/memberSearch`, { withCredentials: true })
             .then((r) => {
                 if (r.data !== "") {
                     setName(r.data.name);

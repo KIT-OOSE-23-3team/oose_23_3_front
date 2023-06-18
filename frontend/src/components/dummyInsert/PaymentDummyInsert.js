@@ -41,7 +41,7 @@ function PaymentDummyInsert() {
       }
 
       axios
-      .post("https://119.56.139.127:5050/paymentDetailInsert", {
+      .post("http://119.56.139.127:5050/paymentDetailInsert", {
           bicycle: {
               bicycleNumber: 1
           },

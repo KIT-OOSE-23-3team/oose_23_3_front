@@ -36,7 +36,7 @@ const ManagerSupportFormpage = () => {
       };
 
       axios
-          .post("https://119.56.139.127:5050/postNotice", notice, {
+          .post("http://119.56.139.127:5050/postNotice", notice, {
             withCredentials: true,
           })
           .then((response) => {

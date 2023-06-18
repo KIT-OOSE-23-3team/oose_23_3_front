@@ -56,7 +56,7 @@ function RentalHistoryDummyInsert() {
 
     axios
       .post(
-        "https://119.56.139.127:5050/historyCheckInsert",
+        "http://119.56.139.127:5050/historyCheckInsert",
         {
           bicycle: {
             bicycleNumber: bicycleNum,

@@ -12,7 +12,7 @@ function BicycleHistoryCheck() {
 
   const getBicycleHistory = () => {
     axios
-      .get(`https://119.56.139.127:5050/bicycleHistoryCheck`, {
+      .get(`http://119.56.139.127:5050/bicycleHistoryCheck`, {
         withCredentials: true,
       })
       .then((r) => {
